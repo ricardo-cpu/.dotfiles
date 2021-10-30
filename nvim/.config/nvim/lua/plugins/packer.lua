@@ -48,7 +48,6 @@ packer.startup(function(use)
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/cmp-vsnip'
-    use 'rafamadriz/friendly-snippets'
 
     -- Debug Section
     use 'mfussenegger/nvim-dap'
