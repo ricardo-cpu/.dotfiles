@@ -1,10 +1,32 @@
 local opts = {noremap = true, silent = true}
-local lspinstall = require'lspinstall'
-lspinstall.setup()
 
-local servers = require'lspinstall'.installed_servers()
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{}
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
+end)
+
+local servers = {
+	"dockerls",
+    "sumneko_lua",
+    "bashls",
+    "rust_analyzer",
+    "vimls",
+    "pyright",
+    "tsserver",
+    "texlab",
+}
+
+for _, name in pairs(servers) do
+	local ok, server = lsp_installer.get_server(name)
+	if ok then
+		if not server:is_installed() then
+			print("Installing " .. name)
+			server:install()
+		end
+	end
 end
 
 local function lspSymbol(name, icon)

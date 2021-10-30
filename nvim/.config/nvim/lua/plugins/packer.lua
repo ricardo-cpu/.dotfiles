@@ -56,7 +56,7 @@ packer.startup(function(use)
 
     -- Lsp/auto Complete Section
     use 'neovim/nvim-lspconfig'
-    use 'kabouzeid/nvim-lspinstall'
+    use 'williamboman/nvim-lsp-installer'
     use 'hrsh7th/nvim-cmp'
     use 'windwp/nvim-ts-autotag'
     use 'hrsh7th/cmp-buffer'
