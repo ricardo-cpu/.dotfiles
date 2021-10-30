@@ -40,7 +40,10 @@ packer.startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
-
+    use {
+        'glacambre/firenvim',
+        run = function() vim.fn['firenvim#install'](0) end 
+    }
 
     -- Debug Section
     use 'mfussenegger/nvim-dap'
