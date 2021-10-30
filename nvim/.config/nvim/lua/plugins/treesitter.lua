@@ -7,7 +7,7 @@ require('nvim-treesitter.configs').setup {
         enable = true,
         disable = {},
         use_languagetree = true,
-        additional_vim_regex_highlighting = false,
+        additional_vim_regex_highlighting = true,
     },
     ensure_installed = {
         "bash",
