@@ -45,6 +45,11 @@ packer.startup(function(use)
         run = function() vim.fn['firenvim#install'](0) end 
     }
 
+    -- Snippets Plugins
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/cmp-vsnip'
+    use 'rafamadriz/friendly-snippets'
+
     -- Debug Section
     use 'mfussenegger/nvim-dap'
     use 'nvim-telescope/telescope-dap.nvim'

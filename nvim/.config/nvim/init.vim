@@ -10,6 +10,9 @@ nmap o A<cr>
 nmap <c-j> o<esc>
 nmap <c-k> O<esc>
 
+imap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>'
+smap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>'
+
 nmap <localleader>e :vs ~/.vimrc<cr>
 
 nmap <F11> :silent! AsyncTask run<cr>
