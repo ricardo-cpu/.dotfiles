@@ -5,6 +5,13 @@ require("nvim_comment").setup()
 require("colorizer").setup()
 require('nvim-web-devicons').setup()
 
+-- vim-vsnip
+if GitDir() == '' then
+    vim.api.nvim_set_var('vsnip_snippet_dir', '~/.vsnip')
+else
+    vim.api.nvim_set_var('vsnip_snippet_dir', GitDir() .. '/.vsnip')
+end
+
 -- nvim-ts-autotag
 require'nvim-treesitter.configs'.setup {
   autotag = {
