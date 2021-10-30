@@ -1,23 +1,12 @@
 #!/usr/bin/env bash
 
-if [ "$EUID" -ne 0 ]; then
-    # Use gnome theme in flatpak
-    flatpak override --filesystem=~/
-
-    # Virtual host apache
-    sed -i 's/#Include conf/extra/httpd-vhosts.conf/Include conf/extra/httpd-vhosts.conf/g' /etc/httpd/conf/httpd.conf
-
-    # use gtk theme in java aplications
-    echo -n '_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=settings -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.aatext=true"' >> /etc/environment
-    exit
-fi
-
 # download oh-my-zsh and plugins
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting -q
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions -q
+git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair -q
+rm -rf ~/.zshrc
 
 # set dotfiles
 cd ~/.dotfiles
@@ -31,5 +20,5 @@ done
 
 ln -s ~/.config/nvim ~/.vim
 ln -s ~/.config/nvim/init.vim ~/.vimrc
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim -q
+echo "Install Sucefull"
