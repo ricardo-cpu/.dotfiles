@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if [ "$EUID" -ne 0 ]
+    # Use gnome theme in flatpak
+    flatpak override --filesystem=~/
+
+    # Virtual host apache
+    sed -i 's/#Include conf/extra/httpd-vhosts.conf/Include conf/extra/httpd-vhosts.conf/g' /etc/httpd/conf/httpd.conf
+
+    # use gtk theme in java aplications
+    echo -n '_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=settings -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.aatext=true"' >> /etc/environment
+    exit
+fi
+
+# download oh-my-zsh and plugins
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
+
+# set dotfiles
+cd ~/.dotfiles
+STOW_FOLDERS="git,scripts,kitty,i3,zsh"
+
+for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+do
+    stow -D $folder
+    stow $folder
+done
