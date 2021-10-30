@@ -2,23 +2,6 @@ local opts = {noremap = true, silent = true}
 local lspinstall = require'lspinstall'
 lspinstall.setup()
 
-local servers = {
-    "dockerfile",
-    "lua",
-    "bash",
-    "rust",
-    "vim",
-    "python",
-    "typescript",
-    "tex",
-}
-
-if not vim.fn.filereadable('~/.local/share/nvim/lspinstall/python') then
-    for k,v in pairs(servers) do
-        lspinstall.install_server(v)
-    end
-end
-
 local servers = require'lspinstall'.installed_servers()
 for _, server in pairs(servers) do
   require'lspconfig'[server].setup{}
