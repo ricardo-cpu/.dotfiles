@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# install Packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# Directory for undo
+mkdir -p ~/.vim/undodir
+
+# Save you old vimrc
+test -f ~/.vimrc && mv ~/.vimrc ~/.vimrc.bak
+test -f ~/.config/nvim/init.vim && mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak
+
+# Set vimrc File
+ln -s ~/.vim/init.vim ~/.vimrc
+
+# Set Neovim Files
+rm -rf ~/.config/nvim
+ln -s ~/.vim/ ~/.config/nvim/
+
+# Install Plugins
+nvim -c 'PackerInstall'
+
+echo 'Successfully Installed'

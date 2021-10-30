@@ -28,3 +28,5 @@ do
     stow -D $folder
     stow $folder
 done
+
+ln -s ~/.config/nvim ~/.vim

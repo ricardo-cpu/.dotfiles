@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/ricardo-cpu/.vim/plugins'
+let g:netrw_dirhist_2='/home/ricardo-cpu/.vim/plugins/SWTC.Vim/spell'
+let g:netrw_dirhist_1='/home/ricardo-cpu/.vim/plugins/SWTC.Vim'

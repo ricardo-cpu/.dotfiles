@@ -1,0 +1,7 @@
+rng	rng.txt	/*rng*
+rng-activation	rng.txt	/*rng-activation*
+rng-configuration	rng.txt	/*rng-configuration*
+rng-functions	rng.txt	/*rng-functions*
+rng-highlighting	rng.txt	/*rng-highlighting*
+rng-keymaps	rng.txt	/*rng-keymaps*
+rng.txt	rng.txt	/*rng.txt*
