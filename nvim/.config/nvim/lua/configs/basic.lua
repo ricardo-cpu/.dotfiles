@@ -43,11 +43,7 @@ endfun
 -- Templates
 
 local filetypes = {}
-local path = GitDir() .. '/templates/'
-
-if path == '/templates/' then
-    path = "~/.vim/templates/"
-end
+local path = "~/.vim/templates/"
 
 local handle = io.popen('ls -A 2>/dev/null ' .. path .. [[ | grep -o '\..*']])
 
