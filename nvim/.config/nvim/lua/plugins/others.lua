@@ -72,6 +72,9 @@ keymap('n', 'cp', ':cp<cr>', opts)
 
 -- FTerm.nvim
 
+require('FTerm').setup({
+    cmd = 'tmux'
+})
 vim.cmd([[highlight VertSplit guibg=#1b1d24]])
 vim.cmd("command! FTerm lua require('FTerm').toggle()")
 
