@@ -1,8 +1,24 @@
 local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
 
 require("nvim_comment").setup()
 require("colorizer").setup()
 require('nvim-web-devicons').setup()
+
+-- harpoon
+require("harpoon").setup({
+    global_settings = {
+        save_on_toggle = true,
+        save_on_change = true,
+    },
+})
+
+keymap('n', '<leader>n', ':lua require("harpoon.mark").add_file()<cr>', opts)
+keymap('n', '<leader><space>', ':lua require("harpoon.ui").toggle_quick_menu()<cr>', opts)
+keymap('n', '<f1>', ':lua require("harpoon.ui").nav_file(1)<cr>', opts)
+keymap('n', '<f2>', ':lua require("harpoon.ui").nav_file(2)<cr>', opts)
+keymap('n', '<f3>', ':lua require("harpoon.ui").nav_file(3)<cr>', opts)
+keymap('n', '<f4>', ':lua require("harpoon.ui").nav_file(4)<cr>', opts)
 
 -- vim-vsnip
 vim.cmd("let g:vsnip_snippet_dirs = ['" .. GitDir() .. '/.vsnip' .. "', '~/.vsnip']")
@@ -51,31 +67,31 @@ vim.fn.Submode_alias('<localleader>m', 'm', "@:", 'n')
 
 vim.api.nvim_set_var('asyncrun_open', 4)
 
-vim.api.nvim_set_keymap('n', 'cn', ':cn<cr>', opts)
-vim.api.nvim_set_keymap('n', 'cp', ':cp<cr>', opts)
+keymap('n', 'cn', ':cn<cr>', opts)
+keymap('n', 'cp', ':cp<cr>', opts)
 
 -- FTerm.nvim
 
 vim.cmd([[highlight VertSplit guibg=#1b1d24]])
 vim.cmd("command! FTerm lua require('FTerm').toggle()")
 
-vim.api.nvim_set_keymap('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
-vim.api.nvim_set_keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
+keymap('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
+keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 
 vim.api.nvim_set_var('asynctasks_term_pos', 'bottom')
 
 -- nvim-tree.lua
-vim.api.nvim_set_keymap('n', '<leader>nn', ':NvimTreeToggle<cr>', opts )
+keymap('n', '<leader>nn', ':NvimTreeToggle<cr>', opts )
 require('nvim-tree').setup{open_on_setup = true, view = {side = 'right'}}
 
 -- EasyAlign
 
-vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {} )
-vim.api.nvim_set_keymap('x', 'ga', '<Plug>(EasyAlign)', {} )
+keymap('n', 'ga', '<Plug>(EasyAlign)', {} )
+keymap('x', 'ga', '<Plug>(EasyAlign)', {} )
 
 -- ArgWrap
 
-vim.api.nvim_set_keymap('n', '<leader>a', ':ArgWrap<cr>', opts )
+keymap('n', '<leader>a', ':ArgWrap<cr>', opts )
 
 -- vim-visual-multi
 

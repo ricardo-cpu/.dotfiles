@@ -40,10 +40,9 @@ packer.startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
-    use {
-        'glacambre/firenvim',
-        run = function() vim.fn['firenvim#install'](0) end 
-    }
+    use 'ThePrimeagen/harpoon'
+    use 'nvim-lua/popup.nvim'
+    use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end}
 
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
