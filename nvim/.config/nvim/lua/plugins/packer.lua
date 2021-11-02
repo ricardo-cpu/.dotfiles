@@ -27,7 +27,7 @@ packer.startup(function(use)
 
     -- Lua Plugins Section
     use 'norcalli/nvim-colorizer.lua'
-    use 'terrortylor/nvim-comment'
+    use 'numToStr/Comment.nvim'
     use 'akinsho/bufferline.nvim'
     use 'famiu/feline.nvim'
     use 'nvim-telescope/telescope.nvim'

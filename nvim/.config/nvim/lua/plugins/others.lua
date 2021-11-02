@@ -1,8 +1,8 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
-require("nvim_comment").setup()
 require("colorizer").setup()
+require('Comment').setup()
 require('nvim-web-devicons').setup()
 
 -- harpoon
