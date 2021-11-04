@@ -4,6 +4,7 @@ export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 export ZSH="/home/ricardo/.oh-my-zsh"
 export EDITOR=nvim
 export VISUAL=nvim
+export REACT_TERMINAL="kitty"
 
 # ZSH_THEME="bira"
 eval "$(starship init zsh)"
