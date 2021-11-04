@@ -26,6 +26,7 @@ packer.startup(function(use)
     use 'tpope/vim-endwise'
 
     -- Lua Plugins Section
+    use 'chentau/marks.nvim'
     use 'norcalli/nvim-colorizer.lua'
     use 'numToStr/Comment.nvim'
     use 'akinsho/bufferline.nvim'
