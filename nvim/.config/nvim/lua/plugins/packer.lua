@@ -8,7 +8,7 @@ packer.startup(function(use)
 
     -- Preview Plugins
     use {'turbio/bracey.vim', ft = {'html', 'css'}, run = 'npm install --prefix server'}
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+    use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install'}
     use {'iamcco/mathjax-support-for-mkdp', ft = {'markdown'}, run = ':call mkdp#util#install()'}
 
     -- General Plugins
@@ -26,16 +26,16 @@ packer.startup(function(use)
     use 'tpope/vim-endwise'
 
     -- Lua Plugins Section
-    use 'chentau/marks.nvim'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'numToStr/Comment.nvim'
+    use {'chentau/marks.nvim', config = function() require'marks'.setup{} end}
+    use {'norcalli/nvim-colorizer.lua', config = function() require("colorizer").setup() end}
+    use {'numToStr/Comment.nvim', config = function() require("Comment").setup() end}
     use 'akinsho/bufferline.nvim'
     use 'famiu/feline.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'nvim-lua/plenary.nvim'
     use 'numtostr/FTerm.nvim'
-    use 'kyazdani42/nvim-web-devicons'
+    use {'kyazdani42/nvim-web-devicons', config = function() require("nvim-web-devicons").setup() end}
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'lukas-reineke/indent-blankline.nvim'
     use 'lewis6991/gitsigns.nvim'
