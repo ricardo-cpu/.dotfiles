@@ -33,7 +33,8 @@ keymap('n', '<localleader>,', '<ap', opts)
 keymap('n', '<localleader>.', '>ap', opts)
 
 -- Fast editing and reloading of vimrc configs
-keymap('n', '<localleader>e', 'vs ~/.vimrc<cr>', opts)
+keymap('n', '<localleader>e', ':vs ~/.vimrc<cr>', opts)
+keymap('n', '<leader>e', ':vs ' .. GitDir() .. '/.vim<cr>', opts)
 
 -- Switch CWD to the directory of the open buffer
 keymap('n', 'cd', ':cd %:p:h<cr>:pwd<cr>', opts)

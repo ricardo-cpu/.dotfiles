@@ -13,8 +13,6 @@ nmap <c-k> O<esc>
 imap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>'
 smap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>'
 
-nmap <localleader>e :vs ~/.vimrc<cr>
-
 nmap <F11> :silent! AsyncTask run<cr>
 nmap <F12> :silent! AsyncTask build<cr>
 
