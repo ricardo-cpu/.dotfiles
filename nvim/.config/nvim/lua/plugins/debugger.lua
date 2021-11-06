@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 
-dap = require('dap')
+local dap = require('dap')
+require'nvim-dap-virtual-text'.setup()
 dap.adapters.lldb = {
   type = 'executable',
   command = '/usr/bin/lldb-vscode',
@@ -43,11 +44,8 @@ dap.configurations.python = {
   },
 }
 
-vim.cmd([[ let g:dap_virtual_text = v:true ]])
 vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
 
-vim.g.dap_virtual_text = false
-vim.g.dap_virtual_text = true
 vim.g.dap_virtual_text = 'all frames'
 
 vim.api.nvim_set_keymap('n', '<F5>',      [[<cmd>lua require'dap'.continue()<cr>]],                       opts)
