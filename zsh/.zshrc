@@ -6,6 +6,11 @@ export EDITOR=nvim
 export VISUAL=nvim
 export REACT_TERMINAL="kitty"
 
+gg () {
+    search=$(echo $@ | sed 's/ /+/g')
+    xdg-open "https://www.google.com/search?q=$search" > /dev/null 2> /dev/null
+}
+
 # ZSH_THEME="bira"
 eval "$(starship init zsh)"
 
@@ -62,3 +67,5 @@ alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignor
 alias server='python -m http.server'
 alias kali='sudo docker run -ti my-kali'
 . /opt/asdf-vm/asdf.sh
+unalias gg
+
