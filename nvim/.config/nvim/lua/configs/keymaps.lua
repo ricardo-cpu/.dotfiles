@@ -14,19 +14,14 @@ keymap('n', '<c-i>', '<c-i>', opts)
 -- Disable highlight
 keymap('n', '<localleader>h', ':noh<cr>', opts)
 
--- Moving
-keymap('n', 'k', 'gk', opts)
-keymap('n', 'j', 'gj', opts)
-
 -- copy
 keymap('n', 'Y', 'y$', opts)
---
+
 -- text-objectis quotes
 keymap('o', 'ix', [[i']], opts)
 keymap('o', 'iq', [[i"]], opts)
 keymap('o', 'ax', [[a']], opts)
 keymap('o', 'aq', [[a!]], opts)
-
 
 -- Shiftwidth
 keymap('n', '<localleader>,', '<ap', opts)

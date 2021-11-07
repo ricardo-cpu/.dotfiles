@@ -1,10 +1,11 @@
 local opts = {noremap = true, silent = true}
+local keymap = vim.api.nvim_set_keymap
 
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
-    server:setup(opts)
+    options = {}
+    server:setup(options)
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
 
@@ -54,8 +55,8 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     },
 }
 
-vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>',           opts)
+keymap('n', 'gr',         '<cmd>lua vim.lsp.buf.references()<CR>',       opts)
+keymap('n', '[d',         '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+keymap('n', ']d',         '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+keymap('n', 'gd',         '<cmd>lua vim.lsp.buf.definition()<CR>',       opts)

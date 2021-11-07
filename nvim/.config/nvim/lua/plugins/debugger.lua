@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
 
 local dap = require('dap')
 require'nvim-dap-virtual-text'.setup()
@@ -48,8 +49,8 @@ vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''
 
 vim.g.dap_virtual_text = 'all frames'
 
-vim.api.nvim_set_keymap('n', '<F5>',      [[<cmd>lua require'dap'.continue()<cr>]],                       opts)
-vim.api.nvim_set_keymap('n', '<leader>b', [[<cmd>lua require'dap'.toggle_breakpoint()<cr>]],              opts)
-vim.api.nvim_set_keymap('n', '<right>',   [[<cmd>lua require'dap'.step_over()<cr>]],                      opts)
-vim.api.nvim_set_keymap('n', '<left>',    [[<cmd>lua require'dap'.step_back()<cr>]],                      opts)
-vim.api.nvim_set_keymap('n', '<leader>t', [[<cmd>lua require'telescope'.extensions.dap.variables{}<cr>]], opts)
+keymap('n', '<F5>',      [[<cmd>lua require'dap'.continue()<cr>]],                       opts)
+keymap('n', '<leader>b', [[<cmd>lua require'dap'.toggle_breakpoint()<cr>]],              opts)
+keymap('n', '<right>',   [[<cmd>lua require'dap'.step_over()<cr>]],                      opts)
+keymap('n', '<left>',    [[<cmd>lua require'dap'.step_back()<cr>]],                      opts)
+keymap('n', '<leader>t', [[<cmd>lua require'telescope'.extensions.dap.variables{}<cr>]], opts)

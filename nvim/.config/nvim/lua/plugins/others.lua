@@ -1,13 +1,9 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
+local set_var = vim.api.nvim_set_var
 
 -- harpoon
-require("harpoon").setup({
-    global_settings = {
-        save_on_toggle = true,
-        save_on_change = true,
-    },
-})
+require("harpoon").setup()
 
 keymap('n', '<leader>n', ':lua require("harpoon.mark").add_file()<cr>', opts)
 keymap('n', '<leader><space>', ':lua require("harpoon.ui").toggle_quick_menu()<cr>', opts)
@@ -27,7 +23,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Goyo
-vim.api.nvim_set_var('goyo_width', 100)
+set_var('goyo_width', 100)
 
 -- gitsigns
 require('gitsigns').setup{
@@ -41,8 +37,8 @@ require("indent_blankline").setup {
 }
 
 -- Submode
-vim.api.nvim_set_var('submode_keep_leaving_key', 1)
-vim.api.nvim_set_var('submode_timeout', 0)
+set_var('submode_keep_leaving_key', 1)
+set_var('submode_timeout', 0)
 
 vim.cmd([[
 fun! Submode_alias(map, key, exec, mode)
@@ -61,7 +57,7 @@ vim.fn.Submode_alias('<localleader>m', 'm', "@:", 'n')
 
 -- AsyncRun/ AsyncTasks
 
-vim.api.nvim_set_var('asyncrun_open', 4)
+set_var('asyncrun_open', 4)
 
 keymap('n', 'cn', ':cn<cr>', opts)
 keymap('n', 'cp', ':cp<cr>', opts)
@@ -77,7 +73,7 @@ vim.cmd("command! FTerm lua require('FTerm').toggle()")
 keymap('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
 keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 
-vim.api.nvim_set_var('asynctasks_term_pos', 'bottom')
+set_var('asynctasks_term_pos', 'bottom')
 
 -- nvim-tree.lua
 keymap('n', '<leader>nn', ':NvimTreeToggle<cr>', opts )
@@ -94,17 +90,17 @@ keymap('n', '<leader>a', ':ArgWrap<cr>', opts )
 
 -- vim-visual-multi
 
-vim.api.nvim_set_var('multi_cursor_use_default_mapping', 0)
+set_var('multi_cursor_use_default_mapping', 0)
 
-vim.api.nvim_set_var('multi_cursor_start_word_key      ', '<C-s>' )
-vim.api.nvim_set_var('multi_cursor_select_all_word_key ', '<A-s>' )
-vim.api.nvim_set_var('multi_cursor_start_key           ', 'g<C-s>')
-vim.api.nvim_set_var('multi_cursor_select_all_key      ', 'g<A-s>')
-vim.api.nvim_set_var('multi_cursor_next_key            ', '<C-s>' )
-vim.api.nvim_set_var('multi_cursor_prev_key            ', '<C-p>' )
-vim.api.nvim_set_var('multi_cursor_skip_key            ', '<C-x>' )
-vim.api.nvim_set_var('multi_cursor_quit_key            ', '<Esc>' )
+set_var('multi_cursor_start_word_key      ', '<C-s>' )
+set_var('multi_cursor_select_all_word_key ', '<A-s>' )
+set_var('multi_cursor_start_key           ', 'g<C-s>')
+set_var('multi_cursor_select_all_key      ', 'g<A-s>')
+set_var('multi_cursor_next_key            ', '<C-s>' )
+set_var('multi_cursor_prev_key            ', '<C-p>' )
+set_var('multi_cursor_skip_key            ', '<C-x>' )
+set_var('multi_cursor_quit_key            ', '<Esc>' )
 
 -- Emmet
 vim.cmd([[ au FileType html,css packadd emmet-vim ]])
-vim.api.nvim_set_var('user_emmet_expandabbr_key', '<localleader>')
+set_var('user_emmet_expandabbr_key', '<localleader>')
