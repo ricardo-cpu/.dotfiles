@@ -32,7 +32,6 @@ packer.startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use {'nvim-treesitter/nvim-treesitter',     run = ':TSUpdate'}
-    use {'glacambre/firenvim',                  run = function() vim.fn['firenvim#install'](0) end}
     use {'chentau/marks.nvim',                  config = function() require'marks'.setup{} end}
     use {'norcalli/nvim-colorizer.lua',         config = function() require("colorizer").setup() end}
     use {'numToStr/Comment.nvim',               config = function() require("Comment").setup() end}
