@@ -26,24 +26,25 @@ packer.startup(function(use)
     use 'tpope/vim-endwise'
 
     -- Lua Plugins Section
-    use {'chentau/marks.nvim', config = function() require'marks'.setup{} end}
-    use {'norcalli/nvim-colorizer.lua', config = function() require("colorizer").setup() end}
-    use {'numToStr/Comment.nvim', config = function() require("Comment").setup() end}
     use 'akinsho/bufferline.nvim'
     use 'famiu/feline.nvim'
     use 'nvim-telescope/telescope.nvim'
-    use 'kyazdani42/nvim-tree.lua'
     use 'nvim-lua/plenary.nvim'
-    use 'numtostr/FTerm.nvim'
-    use {'kyazdani42/nvim-web-devicons', config = function() require("nvim-web-devicons").setup() end}
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'lewis6991/gitsigns.nvim'
+    use 'kyazdani42/nvim-tree.lua'
+    use {'nvim-treesitter/nvim-treesitter',     run = ':TSUpdate'}
+    use {'glacambre/firenvim',                  run = function() vim.fn['firenvim#install'](0) end}
+    use {'chentau/marks.nvim',                  config = function() require'marks'.setup{} end}
+    use {'norcalli/nvim-colorizer.lua',         config = function() require("colorizer").setup() end}
+    use {'numToStr/Comment.nvim',               config = function() require("Comment").setup() end}
+    use {'numtostr/FTerm.nvim',                 config = function() require('FTerm').setup({cmd = 'tmux'}) end}
+    use {'kyazdani42/nvim-web-devicons',        config = function() require("nvim-web-devicons").setup() end}
+    use {'lukas-reineke/indent-blankline.nvim', config = function() require("indent_blankline").setup {buftype_exclude = {"terminal"}} end}
+    use {'lewis6991/gitsigns.nvim',             config = function() require('gitsigns').setup{current_line_blame = true} end}
+    use {'ThePrimeagen/harpoon',                config = function() require('harpoon').setup() end}
+    use {'windwp/nvim-ts-autotag',              config = function() require'nvim-treesitter.configs'.setup {autotag = {enable = true}} end}
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
-    use 'ThePrimeagen/harpoon'
     use 'nvim-lua/popup.nvim'
-    use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end}
 
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
@@ -58,9 +59,9 @@ packer.startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'hrsh7th/nvim-cmp'
-    use 'windwp/nvim-ts-autotag'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-path'
 
 end)

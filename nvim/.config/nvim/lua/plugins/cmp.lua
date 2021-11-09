@@ -29,5 +29,6 @@ cmp.setup {
         { name = "vsnip" },
         { name = "buffer" },
         { name = "nvim_lua" },
+        { name = "path" },
     },
 }

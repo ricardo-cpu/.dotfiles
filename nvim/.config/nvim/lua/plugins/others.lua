@@ -3,8 +3,6 @@ local keymap = vim.api.nvim_set_keymap
 local set_var = vim.api.nvim_set_var
 
 -- harpoon
-require("harpoon").setup()
-
 keymap('n', '<leader>n', ':lua require("harpoon.mark").add_file()<cr>', opts)
 keymap('n', '<leader><space>', ':lua require("harpoon.ui").toggle_quick_menu()<cr>', opts)
 keymap('n', '<f1>', ':lua require("harpoon.ui").nav_file(1)<cr>', opts)
@@ -15,26 +13,8 @@ keymap('n', '<f4>', ':lua require("harpoon.ui").nav_file(4)<cr>', opts)
 -- vim-vsnip
 vim.cmd("let g:vsnip_snippet_dirs = ['" .. GitDir() .. '/.vsnip' .. "', '~/.vsnip']")
 
--- nvim-ts-autotag
-require'nvim-treesitter.configs'.setup {
-  autotag = {
-    enable = true,
-  }
-}
-
 -- Goyo
 set_var('goyo_width', 100)
-
--- gitsigns
-require('gitsigns').setup{
-    current_line_blame = true
-}
-
--- Indent Line
-
-require("indent_blankline").setup {
-    buftype_exclude = {"terminal"}
-}
 
 -- Submode
 set_var('submode_keep_leaving_key', 1)
@@ -63,10 +43,6 @@ keymap('n', 'cn', ':cn<cr>', opts)
 keymap('n', 'cp', ':cp<cr>', opts)
 
 -- FTerm.nvim
-
-require('FTerm').setup({
-    cmd = 'tmux'
-})
 vim.cmd([[highlight VertSplit guibg=#1b1d24]])
 vim.cmd("command! FTerm lua require('FTerm').toggle()")
 
