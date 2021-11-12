@@ -1,7 +1,7 @@
 local o = vim.o
 
 -- set runtime path
-vim.cmd([[set rtp=$HOME/.config/nvim,/usr/local/share/nvim/site,/usr/share/nvim/site,/usr/share/nvim/runtime,/usr/lib/nvim]])
+vim.cmd([[set rtp=$HOME/.config/nvim,/usr/share/nvim/runtime]])
 
 -- Set general options
 o.ruler = true
