@@ -41,6 +41,7 @@ packer.startup(function(use)
     use {'lewis6991/gitsigns.nvim',             config = function() require('gitsigns').setup{current_line_blame = true} end}
     use {'ThePrimeagen/harpoon',                config = function() require('harpoon').setup() end}
     use {'windwp/nvim-ts-autotag',              config = function() require'nvim-treesitter.configs'.setup {autotag = {enable = true}} end}
+    use {'lewis6991/impatient.nvim',            config = function() require('impatient') end}
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
     use 'nvim-lua/popup.nvim'
