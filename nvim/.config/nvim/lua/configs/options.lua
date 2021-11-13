@@ -23,6 +23,7 @@ o.so = 5
 o.siso = 20
 o.splitright = true
 o.splitbelow = true
+o.foldenable = false
 o.foldcolumn = '0'
 o.signcolumn = "yes"
 o.foldmethod = "expr"
