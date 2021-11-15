@@ -45,6 +45,7 @@ packer.startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
     use 'nvim-lua/popup.nvim'
+    use 'ThePrimeagen/refactoring.nvim'
 
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
