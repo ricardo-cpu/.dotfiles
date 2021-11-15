@@ -61,11 +61,12 @@ alias ktab='kitty @ launch --type=tab --keep-focus'
 alias fzf="fzf --preview 'bat -P -n {}'"
 alias du='du -h'
 alias x='chmod +x'
+alias xargs='xargs '
+alias d=docker
 
 alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignore' -exec rm -rf {} \;; find . -iname '.github' -exec rm -rf {} \;"
 
 alias server='python -m http.server'
-alias kali='sudo docker run -ti my-kali'
 . /opt/asdf-vm/asdf.sh
 unalias gg
 
