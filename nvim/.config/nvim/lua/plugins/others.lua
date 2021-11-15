@@ -22,18 +22,10 @@ set_var('submode_timeout', 0)
 
 vim.cmd([[
 fun! Submode_alias(map, key, exec, mode)
-  call submode#enter_with('localleader', a:mode, '', a:map, a:exec)
-  call submode#map('localleader',        a:mode, '', a:key, a:exec)
+  call submode#enter_with('mode', a:mode, '', a:map, a:exec)
+  call submode#map('mode',        a:mode, '', a:key, a:exec)
 endf
 ]])
-
-vim.fn.Submode_alias('<localleader>j', 'j', ':m .+1<cr>==', 'n')
-vim.fn.Submode_alias('<localleader>k', 'k', ':m .-2<cr>==', 'n')
-
-vim.fn.Submode_alias('<localleader>j', 'j', ":m '>+1<cr>gv=gv", 'v')
-vim.fn.Submode_alias('<localleader>k', 'k', ":m '<-2<cr>gv=gv", 'v')
-
-vim.fn.Submode_alias('<localleader>m', 'm', "@:", 'n')
 
 -- AsyncRun/ AsyncTasks
 
