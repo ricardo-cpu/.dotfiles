@@ -45,7 +45,7 @@ packer.startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
     use 'nvim-lua/popup.nvim'
-    use 'ThePrimeagen/refactoring.nvim'
+    use {'ThePrimeagen/refactoring.nvim', config = function() require('refactoring').setup() end}
 
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
