@@ -1,0 +1,6 @@
+{
+  "app.get": {
+    "prefix": "get",
+    "body": "app.get('/', (req, res) => {\n\t${0}\n})"
+  }
+}
