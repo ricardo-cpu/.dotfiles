@@ -80,6 +80,7 @@ vim.cmd([[autocmd InsertEnter * setl norelativenumber]])
 vim.cmd([[ syntax enable ]])
 vim.cmd([[ syntax on ]])
 vim.api.nvim_set_var( "vimsyn_embed", "lPr" )
+vim.g["markdown_fenced_languages"] = {'html', 'python', 'ruby', 'vim', 'javascript', 'json', 'css'}
 
 -- Let 'tl' toggle between this and the last accessed tab
 vim.api.nvim_set_var('lasttab', 1)
