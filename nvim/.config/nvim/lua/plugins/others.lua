@@ -12,6 +12,7 @@ keymap('n', '<f4>', ':lua require("harpoon.ui").nav_file(4)<cr>', opts)
 
 -- vim-vsnip
 vim.cmd("let g:vsnip_snippet_dirs = ['" .. GitDir() .. '/.vsnip' .. "', '~/.vsnip']")
+vim.cmd("au VimEnter * let g:vsnip_filetypes.latex = ['markdown']")
 
 -- Goyo
 set_var('goyo_width', 100)

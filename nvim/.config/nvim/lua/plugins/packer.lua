@@ -8,8 +8,8 @@ packer.startup(function(use)
 
     -- Preview Plugins
     use {'turbio/bracey.vim', ft = {'html', 'css'}, run = 'npm install --prefix server'}
-    use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install'}
-    use {'iamcco/mathjax-support-for-mkdp', ft = {'markdown'}, run = ':call mkdp#util#install()'}
+    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
+    use {'iamcco/mathjax-support-for-mkdp', run = ':call mkdp#util#install()', after = {'markdown-preview.nvim'}}
 
     -- General Plugins
     use 'jiangmiao/auto-pairs'
@@ -50,6 +50,7 @@ packer.startup(function(use)
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/cmp-vsnip'
+    use "rafamadriz/friendly-snippets"
 
     -- Debug Section
     use 'mfussenegger/nvim-dap'
