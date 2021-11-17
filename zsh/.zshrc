@@ -63,6 +63,7 @@ alias du='du -h'
 alias x='chmod +x'
 alias xargs='xargs '
 alias d=docker
+alias p=python
 
 alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignore' -exec rm -rf {} \;; find . -iname '.github' -exec rm -rf {} \;"
 
