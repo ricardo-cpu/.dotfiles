@@ -12,8 +12,8 @@ function M.setup(config)
   ---@class ColorScheme
   local colors = {
     none = "NONE",
-    bg = "#0f1419",
-    bg2 = "#0f1419",
+    bg = "#171D20",
+    bg2 = "#171D20",
     bg_visual = "#393f4a",
     border = "#646e82",
     bg_highlight = "#242b38",

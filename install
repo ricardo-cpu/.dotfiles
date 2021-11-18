@@ -12,6 +12,14 @@ rm -rf ~/.zshrc
 cd ~/.dotfiles
 STOW_FOLDERS="git,scripts,kitty,i3,zsh,tmux"
 
+# install ZorinOS Theme
+
+mkdir "/tmp/themes/{gtk,icon}"
+git clone https://github.com/ZorinOS/zorin-desktop-themes /tmp/themes/gtk -q
+git clone https://github.com/ZorinOS/zorin-icon-themes /tmp/themes/icon -q
+mv /tmp/themes/gtk/* ~/.themes
+mv /tmp/themes/icon/* ~/.icons
+
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
     stow -D $folder
