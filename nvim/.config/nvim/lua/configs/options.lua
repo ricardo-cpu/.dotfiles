@@ -35,7 +35,6 @@ o.gfn = "Ubuntu Mono Regular"
 -- Colorscheme
 o.background = "dark"
 o.termguicolors = true
-o.winblend = 20
 o.pumblend = 10
 
 -- Use spaces instead of tabs
