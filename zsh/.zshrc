@@ -1,7 +1,7 @@
 export PATH=$PATH:~/.local/share/nvim/site/pack/packer/start/asynctasks.vim/bin/
 export PATH=$PATH:~/.dotfiles/scripts/
 export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
-export ZSH="/home/ricardo/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export VISUAL=nvim
 export REACT_TERMINAL="kitty"
@@ -34,7 +34,7 @@ autopair-init
 
 # alias
 alias dev='~/Documentos/dev/'
-dev='~/Documentos/dev'
+dev="$HOME/Documentos/dev"
 alias sites='/srv/http/'
 
 alias starvim='vim -S ~/.vim/pack/plugins/opt/SWTC.Vim/starwars.vim'
@@ -64,7 +64,7 @@ alias x='chmod +x'
 alias xargs='xargs '
 alias d=docker
 alias p=python
-
+alias wget="wget -c"
 alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignore' -exec rm -rf {} \;; find . -iname '.github' -exec rm -rf {} \;"
 
 alias server='python -m http.server'
