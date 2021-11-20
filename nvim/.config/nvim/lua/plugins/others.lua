@@ -37,7 +37,6 @@ keymap('n', 'cn', ':cn<cr>', opts)
 keymap('n', 'cp', ':cp<cr>', opts)
 
 -- FTerm.nvim
-require('FTerm').setup({cmd = {'tmux'}})
 vim.cmd([[highlight VertSplit guibg=#1b1d24]])
 vim.cmd("command! FTerm lua require('FTerm').toggle()")
 
@@ -48,10 +47,8 @@ set_var('asynctasks_term_pos', 'bottom')
 
 -- nvim-tree.lua
 keymap('n', '<leader>nn', ':NvimTreeToggle<cr>', opts )
-require('nvim-tree').setup{open_on_setup = true, view = {side = 'right'}}
 
 -- EasyAlign
-
 keymap('n', 'ga', '<Plug>(EasyAlign)', {} )
 keymap('x', 'ga', '<Plug>(EasyAlign)', {} )
 

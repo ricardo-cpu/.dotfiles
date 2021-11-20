@@ -30,22 +30,22 @@ packer.startup(function(use)
     use 'famiu/feline.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim'
-    use 'kyazdani42/nvim-tree.lua'
-    use 'numtostr/FTerm.nvim'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
     use 'nvim-lua/popup.nvim'
     use {'nvim-treesitter/nvim-treesitter',     run = ':TSUpdate'}
-    use {'chentau/marks.nvim',                  config = function() require'marks'.setup{} end}
-    use {'norcalli/nvim-colorizer.lua',         config = function() require("colorizer").setup() end}
-    use {'numToStr/Comment.nvim',               config = function() require("Comment").setup() end}
-    use {'kyazdani42/nvim-web-devicons',        config = function() require("nvim-web-devicons").setup() end}
-    use {'lukas-reineke/indent-blankline.nvim', config = function() require("indent_blankline").setup {buftype_exclude = {"terminal"}} end}
-    use {'lewis6991/gitsigns.nvim',             config = function() require('gitsigns').setup{current_line_blame = true} end}
-    use {'ThePrimeagen/harpoon',                config = function() require('harpoon').setup() end}
-    use {'windwp/nvim-ts-autotag',              config = function() require'nvim-treesitter.configs'.setup {autotag = {enable = true}} end}
-    use {'lewis6991/impatient.nvim',            config = function() require('impatient') end}
-    use {'ThePrimeagen/refactoring.nvim',       config = function() require('refactoring').setup() end}
+    use {'kyazdani42/nvim-tree.lua',            config = require('nvim-tree').setup{open_on_setup = true, view = {side = 'right'}}}
+    use {'numtostr/FTerm.nvim',                 config = require('FTerm').setup({cmd = {'tmux'}}) }
+    use {'chentau/marks.nvim',                  config = require'marks'.setup{}}
+    use {'norcalli/nvim-colorizer.lua',         config = require("colorizer").setup()}
+    use {'numToStr/Comment.nvim',               config = require("Comment").setup()}
+    use {'kyazdani42/nvim-web-devicons',        config = require("nvim-web-devicons").setup()}
+    use {'lukas-reineke/indent-blankline.nvim', config = require("indent_blankline").setup {buftype_exclude = {"terminal"}}}
+    use {'lewis6991/gitsigns.nvim',             config = require('gitsigns').setup{current_line_blame = true}}
+    use {'ThePrimeagen/harpoon',                config = require('harpoon').setup()}
+    use {'windwp/nvim-ts-autotag',              config = require('nvim-treesitter.configs').setup { autotag = {enable = true} }}
+    use {'lewis6991/impatient.nvim',            config = require('impatient')}
+    use {'ThePrimeagen/refactoring.nvim',       config = require('refactoring').setup()}
 
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
