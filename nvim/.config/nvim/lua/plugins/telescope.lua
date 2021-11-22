@@ -9,7 +9,7 @@ require('telescope').setup{
         winblend = 20,
         mappings = {
             n = {
-                ["<esc>"] = actions.close,
+                ["<C-q>"] = actions.send_to_qflist,
             },
             i = {
                 ["<C-q>"] = actions.send_to_qflist,
@@ -17,6 +17,9 @@ require('telescope').setup{
         }
     }
 }
+
+vim.cmd([[au FileType TelescopePrompt nmap <buffer> v <c-v>]])
+vim.cmd([[au FileType TelescopePrompt nmap <buffer> x <c-x>]])
 
 M = {}
 local function refactor(prompt_bufnr)
