@@ -40,6 +40,9 @@ fun! Alias(from, to)
 endfun
 ]])
 
+-- commands
+vim.cmd([[ command W w ]])
+
 -- Templates
 
 local filetypes = {}
