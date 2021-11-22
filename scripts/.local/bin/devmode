@@ -1,0 +1,17 @@
+#!/bin/env bash
+
+touch .vim
+mkdir -p .vsnip
+
+echo -n "Enter the command for run: "   && read COMMAND_RUN
+echo -n "Enter the command for build: " && read COMMAND_BUILD
+echo -n "Enter the fold for run the commands: " && read FOLDER 
+
+cd $(realpath $FOLDER)
+
+echo -e "[run]\ncommand=$COMMAND_RUN\ncwd=$(realpath $FOLDER)\nsave=1" >> .tasks
+echo -e "[build]\ncommand=$COMMAND_BUILD\ncwd=$(realpath $FOLDER)\noutput=quickfix\nsave=1" >> .tasks
+
+ctags -R --exclude=node_modules --exclude=.git .
+
+echo -e "tags\n.vim\n.tasks\n.vsnip\n" >> .gitignore
