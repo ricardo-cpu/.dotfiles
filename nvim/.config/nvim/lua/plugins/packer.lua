@@ -34,18 +34,19 @@ packer.startup(function(use)
     use 'p00f/nvim-ts-rainbow'
     use 'nvim-lua/popup.nvim'
     use {'nvim-treesitter/nvim-treesitter',     run = ':TSUpdate'}
-    use {'kyazdani42/nvim-tree.lua',            config = function() require('nvim-tree').setup{open_on_setup = true, view = {side = 'right'}} end}
-    use {'numtostr/FTerm.nvim',                 config = function() require('FTerm').setup({cmd = {'tmux'}})  end}
-    use {'chentau/marks.nvim',                  config = function() require'marks'.setup{} end}
-    use {'norcalli/nvim-colorizer.lua',         config = function() require("colorizer").setup() end}
-    use {'numToStr/Comment.nvim',               config = function() require("Comment").setup() end}
-    use {'kyazdani42/nvim-web-devicons',        config = function() require("nvim-web-devicons").setup() end}
-    use {'lukas-reineke/indent-blankline.nvim', config = function() require("indent_blankline").setup {buftype_exclude = {"terminal"}} end}
-    use {'lewis6991/gitsigns.nvim',             config = function() require('gitsigns').setup{current_line_blame = true} end}
-    use {'ThePrimeagen/harpoon',                config = function() require('harpoon').setup() end}
-    use {'windwp/nvim-ts-autotag',              config = function() require('nvim-treesitter.configs').setup { autotag = {enable = true} } end}
-    use {'lewis6991/impatient.nvim',            config = function() require('impatient') end}
-    use {'ThePrimeagen/refactoring.nvim',       config = function() require('refactoring').setup() end}
+    use 'phaazon/hop.nvim'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'numtostr/FTerm.nvim'
+    use 'chentau/marks.nvim'
+    use 'norcalli/nvim-colorizer.lua'
+    use 'numToStr/Comment.nvim'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'lukas-reineke/indent-blankline.nvim'
+    use 'lewis6991/gitsigns.nvim'
+    use 'ThePrimeagen/harpoon'
+    use 'windwp/nvim-ts-autotag'
+    use 'lewis6991/impatient.nvim'
+    use 'ThePrimeagen/refactoring.nvim'
 
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
