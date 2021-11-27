@@ -26,6 +26,7 @@ packer.startup(function(use)
     use 'tpope/vim-endwise'
 
     -- Lua Plugins Section
+    use "AckslD/nvim-neoclip.lua"
     use 'akinsho/bufferline.nvim'
     use 'famiu/feline.nvim'
     use 'nvim-telescope/telescope.nvim'

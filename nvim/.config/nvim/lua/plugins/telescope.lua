@@ -67,3 +67,6 @@ keymap('n', '<A-q>',     ':lua require("telescope.builtin").quickfix()<cr>',    
 keymap('n', '<space>ca', ':lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_dropdown({}))<cr>', opts )
 
 keymap("v", "<Leader>rt", [[ <Esc><Cmd>lua M.refactors()<CR>]], opts)
+
+-- neoclip
+keymap('n', '<A-y>', ':lua require("telescope").extensions.neoclip.default()<cr>', opts )

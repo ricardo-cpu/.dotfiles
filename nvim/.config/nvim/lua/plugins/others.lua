@@ -17,7 +17,9 @@ require("Comment").setup()
 -- colorizer
 require("colorizer").setup()
 -- marks
-require('marks').setup{}
+require('marks').setup({})
+-- neoclip
+require('neoclip').setup()
 
 -- harpoon
 require('harpoon').setup()

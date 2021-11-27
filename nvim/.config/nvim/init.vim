@@ -3,8 +3,7 @@ luafile ~/.vim/lua/init.lua
 set undofile
 set undodir=~/.vim/undodir
 
-au BufEnter * noremap <c-i> <c-i>
-au BufEnter * nmap <tab> i<cr><esc>
+au BufEnter * nmap <space><tab> i<cr><esc>
 imap <c-l> <del>
 nmap o A<cr>
 nmap <c-j> o<esc>
