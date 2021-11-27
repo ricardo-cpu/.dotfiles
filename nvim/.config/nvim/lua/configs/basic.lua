@@ -61,10 +61,11 @@ for type in pairs(filetypes) do
 end
 
 -- background transparent
-function Transparent()
-    require('transparent').setup()
-    o.cursorline = false
-end
+vim.cmd([[
+command Transparent
+    \ lua require('transparent').setup() ;
+    \ vim.o.cursorline = false
+]])
 
 -- filetype plugin
 vim.cmd([[filetype plugin on]])
