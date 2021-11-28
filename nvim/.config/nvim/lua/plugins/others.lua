@@ -106,3 +106,6 @@ set_var('multi_cursor_quit_key            ', '<Esc>' )
 -- Emmet
 vim.cmd([[ au FileType html,css packadd emmet-vim ]])
 set_var('user_emmet_expandabbr_key', '<localleader>')
+
+-- Matchup
+vim.g.loaded_matchit = 1

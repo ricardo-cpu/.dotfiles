@@ -41,6 +41,9 @@ require('nvim-treesitter.configs').setup {
         enable = true,
         extended_mode = true,
         max_file_lines = nil,
+    },
+    matchup = {
+        enable = true
     }
 }
 
