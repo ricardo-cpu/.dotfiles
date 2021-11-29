@@ -67,6 +67,7 @@ alias d=docker
 alias p=python
 alias wget="wget -c"
 alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignore' -exec rm -rf {} \;; find . -iname '.github' -exec rm -rf {} \;"
+alias gs=/usr/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/service/daemon.js
 
 alias server='python -m http.server'
 . /opt/asdf-vm/asdf.sh
