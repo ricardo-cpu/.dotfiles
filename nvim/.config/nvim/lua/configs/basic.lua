@@ -60,13 +60,6 @@ for type in pairs(filetypes) do
     vim.cmd("au! BufNewFile *" .. filetypes[type] .. " 0r " .. path .. "template" .. filetypes[type])
 end
 
--- background transparent
-vim.cmd([[
-command Transparent
-    \ lua require('transparent').setup() ;
-    \ vim.o.cursorline = false
-]])
-
 -- filetype plugin
 vim.cmd([[filetype plugin on]])
 vim.cmd([[filetype indent on]])
