@@ -70,6 +70,8 @@ keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint
 
 
 -- FTerm.nvim
+require('FTerm').setup({cmd = {'tmux'}})
+
 vim.cmd([[highlight VertSplit guibg=#1b1d24]])
 vim.cmd("command! FTerm lua require('FTerm').toggle()")
 
