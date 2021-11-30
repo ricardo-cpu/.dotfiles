@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# setup vim
+git clone https://github.com/neovim/neovim -q ~/.cache/neovim --depth=1
+
 # download oh-my-zsh and plugins
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
