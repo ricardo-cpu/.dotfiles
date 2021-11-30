@@ -1,7 +1,7 @@
 local o = vim.o
 
 -- set runtime path
-vim.cmd([[set rtp=$HOME/.config/nvim,/usr/share/nvim/runtime]])
+vim.cmd([[set rtp=$HOME/.config/nvim,~/.cache/neovim/runtime]])
 
 -- Set general options
 o.ruler = true
@@ -18,7 +18,6 @@ o.lazyredraw = true
 o.magic = true
 o.showmatch = true
 o.mat = 2
-o.cursorline = true
 o.so = 5
 o.siso = 20
 o.splitright = true
