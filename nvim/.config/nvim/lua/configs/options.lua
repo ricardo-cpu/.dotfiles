@@ -1,8 +1,5 @@
 local o = vim.o
 
--- set runtime path
-vim.cmd([[set rtp=$HOME/.config/nvim,~/.cache/neovim/runtime]])
-
 -- Set general options
 o.ruler = true
 o.hidden = true
