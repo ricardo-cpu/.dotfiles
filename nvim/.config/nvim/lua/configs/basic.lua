@@ -31,6 +31,12 @@ end
 vim.cmd([[au! bufwritepost ~/.vimrc source ~/.vimrc]])
 vim.cmd[[ au! VimEnter * lua SourceVim() ]]
 
+-- Backup directory
+
+if vim.fn.isdirectory('/tmp/backup/') == 0 then
+    os.execute('mkdir /tmp/backup')
+end
+
 -- Alias
 vim.cmd([[
 fun! Alias(from, to)

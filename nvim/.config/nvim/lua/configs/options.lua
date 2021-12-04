@@ -24,6 +24,9 @@ o.foldcolumn = '0'
 o.signcolumn = "yes"
 o.foldmethod = "expr"
 o.number = true
+o.backup = true
+o.backupext = '.bak'
+vim.cmd([[set backupdir=/tmp/backup]])
 
 -- Font options
 o.gfn = "Ubuntu Mono Regular"
