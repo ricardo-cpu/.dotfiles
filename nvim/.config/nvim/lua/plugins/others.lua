@@ -5,11 +5,9 @@ local set_var = vim.api.nvim_set_var
 -- devicons
 require("nvim-web-devicons").setup()
 -- indent line
-require("indent_blankline").setup {buftype_exclude = {"terminal"}}
+require("indent_blankline").setup {buftype_exclude = {"terminal"}, char = "|"}
 -- gitsigns
 require('gitsigns').setup{current_line_blame = true}
--- autotag
-require('nvim-treesitter.configs').setup { autotag = {enable = true} }
 -- impatient
 require('impatient')
 -- Comment

@@ -48,3 +48,21 @@ require('nvim-treesitter.configs').setup {
 }
 
 o.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- autotag
+require('nvim-treesitter.configs').setup { autotag = {enable = true} }
+
+require'treesitter-context'.setup{
+    patterns = {
+        default = {
+            'class',
+            'function',
+            'method',
+            'for',
+            'while',
+            'if',
+            'switch',
+            'case',
+        },
+    },
+}

@@ -364,6 +364,9 @@ function M.setup(config)
     HopUnmatched = { fg = c.dark5 },
 
     LightspeedGreyWash = { fg = c.dark5 },
+
+    -- treesitter-context
+    TreesitterContext = { bg = c.bg_highlight }
   }
 
   theme.defer = {}

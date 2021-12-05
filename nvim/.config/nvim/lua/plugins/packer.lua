@@ -31,10 +31,8 @@ packer.startup(function(use)
     use 'famiu/feline.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim'
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'p00f/nvim-ts-rainbow'
     use 'nvim-lua/popup.nvim'
-    use {'nvim-treesitter/nvim-treesitter',     run = ':TSUpdate'}
     use 'phaazon/hop.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'numtostr/FTerm.nvim'
@@ -48,6 +46,12 @@ packer.startup(function(use)
     use 'windwp/nvim-ts-autotag'
     use 'lewis6991/impatient.nvim'
     use 'ThePrimeagen/refactoring.nvim'
+
+    -- treesitter
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
+    use 'nvim-treesitter/playground'
+    use 'romgrk/nvim-treesitter-context'
+    use {'nvim-treesitter/nvim-treesitter',     run = ':TSUpdate'}
 
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'
