@@ -10,8 +10,8 @@ require("indent_blankline").setup {buftype_exclude = {"terminal"}, char = "|"}
 require('gitsigns').setup{current_line_blame = true}
 -- impatient
 require('impatient')
--- Comment
-require("Comment").setup()
+-- nvim-comment
+require("nvim_comment").setup()
 -- colorizer
 require("colorizer").setup()
 -- marks
@@ -72,6 +72,7 @@ set_var('asynctasks_term_pos', 'bottom')
 -- nvim-tree.lua
 require('nvim-tree').setup{open_on_setup = true, view = {side = 'right'}}
 keymap('n', '<leader>nn', ':NvimTreeToggle<cr>', opts )
+vim.cmd([[ au BufEnter NvimTree hi clear StatusLine ]])
 
 -- EasyAlign
 keymap('n', 'ga', '<Plug>(EasyAlign)', {} )
@@ -95,7 +96,6 @@ set_var('multi_cursor_skip_key            ', '<C-x>' )
 set_var('multi_cursor_quit_key            ', '<Esc>' )
 
 -- Emmet
-vim.cmd([[ au FileType html,css packadd emmet-vim ]])
 set_var('user_emmet_expandabbr_key', '<localleader>')
 
 -- Matchup

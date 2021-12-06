@@ -38,7 +38,7 @@ packer.startup(function(use)
     use 'numtostr/FTerm.nvim'
     use 'chentau/marks.nvim'
     use 'norcalli/nvim-colorizer.lua'
-    use 'numToStr/Comment.nvim'
+    use 'terrortylor/nvim-comment'
     use 'kyazdani42/nvim-web-devicons'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'lewis6991/gitsigns.nvim'
