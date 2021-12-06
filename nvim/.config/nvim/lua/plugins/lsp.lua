@@ -30,14 +30,16 @@ for _, name in pairs(servers) do
 	end
 end
 
-local function lspSymbol(name, icon)
-    vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
-end
+vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticError" })
+vim.fn.sign_define("DiagnosticSignInfo",  { text = "", texthl = "DiagnosticInfo" })
+vim.fn.sign_define("DiagnosticSignHint",  { text = "", texthl = "DiagnosticHint" })
+vim.fn.sign_define("DiagnosticSignWarn",  { text = "", texthl = "DiagnosticWarn" })
 
-lspSymbol("Error", "")
-lspSymbol("Information", "")
-lspSymbol("Hint", "")
-lspSymbol("Warning", "")
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
