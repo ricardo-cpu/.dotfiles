@@ -1,87 +1,40 @@
-local util = require("onedark.util")
-local configModule = require("onedark.config")
+local colors = {
+        black = { '#101012', '#101012' },
+          bg0 = { '#171B20', '#fafafa' }, --
+          bg1 = { '#171B20', '#f0f0f0' }, --
+          bg2 = { '#35363b', '#e6e6e6' }, --
+          bg3 = { '#37383d', '#dcdcdc' }, --
+         bg_d = { '#1b1c1e', '#c9c9c9' }, --
+      bg_blue = { '#68aee8', '#68aee8' },
+    bg_yellow = { '#e2c792', '#e2c792' },
+           fg = { '#a7aab0', '#383a42' }, --
+       purple = { '#bb70d2', '#a626a4' }, --
+        green = { '#8fb573', '#50a14f' }, --
+       orange = { '#c49060', '#c18401' }, --
+         blue = { '#57a5e5', '#4078f2' }, --
+       yellow = { '#dbb671', '#986801' }, --
+         cyan = { '#51a8b3', '#0184bc' }, --
+          red = { '#de5d68', '#e45649' }, --
+         grey = { '#5a5b5e', '#a0a1a7' }, --
+   light_grey = { '#818387', '#818387' },
+    dark_cyan = { '#2b5d63', '#2b5d63' },
+     dark_red = { '#833b3b', '#833b3b' },
+  dark_yellow = { '#7c5c20', '#7c5c20' },
+  dark_purple = { '#79428a', '#79428a' },
+    diff_add =  { '#282b26', '#282b26' },
+  diff_delete = { '#2a2626', '#2a2626' },
+  diff_change = { '#1a2a37', '#1a2a37' },
+    diff_text = { '#2c485f', '#2c485f' }
+}
 
-local M = {}
+local styles = { dark = 1, light = 2 }
 
----@param config Config
----@return ColorScheme
-function M.setup(config)
-  config = config or configModule.config
-
-  -- Color Palette
-  ---@class ColorScheme
-  local colors = {
-    none = "NONE",
-    bg = "#171B20",
-    bg2 = "#171B20",
-    bg_visual = "#393f4a",
-    border = "#646e82",
-    bg_highlight = "#242b38",
-    fg = "#abb2bf",
-    fg_light = "#adbac7",
-    fg_dark = "#798294",
-    fg_gutter = "#5c6370",
-    dark5 = "#abb2bf",
-    blue = "#61afef",
-    cyan = "#56b6c2",
-    purple = "#c678dd",
-    orange = "#d19a66",
-    yellow = "#e0af68",
-    yellow2 = "#e2c08d",
-    bg_yellow = "#ebd09c",
-    green = "#98c379",
-    red = "#e86671",
-    red1 = "#f65866",
-    git = { change = "#e0af68", add = "#109868", delete = "#9A353D", conflict = "#bb7a61" },
-    gitSigns = { change = "#e0af68", add = "#109868", delete = "#9A353D" },
-    diagnostics = {
-      error = "#db4b4b",
-      hint = "#1abc9c",
-      info = "#0db9d7",
-      warn = "#e0af68",
-    },
-  }
-
-  util.bg = colors.bg
-
-  colors.diff = {
-    add = util.darken(colors.git.add, 0.15),
-    delete = util.darken(colors.git.delete, 0.15),
-    change = util.darken(colors.git.change, 0.15),
-    text = colors.fg_gutter,
-  }
-
-  colors.gitSigns = {
-    add = util.brighten(colors.gitSigns.add, 0.2),
-    change = util.brighten(colors.gitSigns.change, 0.2),
-    delete = util.brighten(colors.gitSigns.delete, 0.2),
-  }
-
-  colors.git.ignore = colors.fg_gutter
-  colors.black = util.darken(colors.bg, 0.8, "#000000")
-  colors.border_highlight = colors.blue
-
-  -- Popups and statusline always get a dark background
-  colors.bg_popup = colors.bg2
-  colors.bg_statusline = colors.bg2
-
-  -- Sidebar and Floats are configurable
-  colors.bg_sidebar = config.darkSidebar and colors.bg2 or colors.bg
-  colors.bg_sidebar = config.transparent and colors.none or colors.bg_sidebar
-  colors.bg_float = config.darkFloat and colors.bg2 or colors.bg
-
-  colors.bg_search = colors.bg_yellow
-  colors.fg_search = colors.bg2
-  colors.fg_sidebar = colors.fg_dark
-
-  colors.error = colors.red
-  colors.warning = colors.yellow
-  colors.info = colors.blue
-  colors.hint = colors.cyan
-
-  util.color_overrides(colors, config)
-
-  return colors
+local function select_colors()
+    local index = styles[vim.g.onedark_style]
+    local selected = {}
+    for k, v in pairs(colors) do selected[k] = v[index] end
+		selected['none'] = 'NONE'
+    return selected
 end
 
-return M
+return select_colors()

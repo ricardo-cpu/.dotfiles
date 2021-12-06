@@ -1,21 +1,26 @@
-local util = require("onedark.util")
-local theme = require("onedark.theme")
-local configModule = require("onedark.config")
+local M = {}
+vim.g.onedark_style = vim.g.onedark_style or 'dark'
+local highlights = require('onedark.highlights')
+local terminal = require('onedark.terminal')
 
-local function setup(userConfig)
-  -- Warning, If config set inside 'vim.g'
-  if configModule.vimConfig then
-    vim.schedule(function()
-      vim.api.nvim_err_writeln(
-        [[monsonjeremy/onedark: onedark will stop supporting vimscript soon, change your config to lua or wrap it around lua << EOF ... EOF]]) -- luacheck: ignore
-    end)
-  end
-
-  -- Applying user configuration
-  if userConfig then configModule.applyConfiguration(userConfig) end
-
-  -- Load colorscheme
-  util.load(theme.setup(configModule.config))
+local function colorscheme()
+    vim.cmd("hi clear")
+    if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
+    vim.o.background = "dark"
+    vim.o.termguicolors = true
+    vim.g.colors_name = "onedark"
+    highlights.setup()
+    terminal.setup()
 end
 
-return { setup = setup }
+function M.toggle()
+    local styles = { 'dark', 'light'}
+    local index={}
+    for k,v in pairs(styles) do index[v]=k end
+    vim.g.onedark_style = styles[index[vim.g.onedark_style] + 1] or 'dark'
+    vim.cmd[[colorscheme onedark]]
+end
+
+function M.setup() colorscheme() end
+
+return M

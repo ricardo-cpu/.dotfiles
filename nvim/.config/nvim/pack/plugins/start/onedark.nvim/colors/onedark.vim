@@ -1,9 +1,11 @@
-" clear cache so this reloads changes.
-" useful for development
+lua << EOF
+for k in pairs(package.loaded) do
+    if k:match(".*onedark.*") then package.loaded[k] = nil end
+end
 
-" lua package.loaded['onedark'] = nil
-" lua package.loaded['onedark.theme'] = nil
-" lua package.loaded['onedark.colors'] = nil
-" lua package.loaded['onedark.util'] = nil
-lua package.loaded['onedark.config'] = nil
+vim.g.onedark_toggle_style_keymap = vim.g.onedark_toggle_style_keymap or '<leader>cs'
+vim.api.nvim_set_keymap('n', vim.g.onedark_toggle_style_keymap, [[<Cmd>lua require('onedark').toggle()<CR>]], { noremap = true, silent = true })
+
+require('onedark').setup()
+EOF
 

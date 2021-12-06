@@ -15,4 +15,4 @@ smap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab
 nmap <F11> :silent! AsyncTask run<cr>
 nmap <F12> :silent! AsyncTask build<cr>
 
-lua require('onedark').setup()
+colo onedark
