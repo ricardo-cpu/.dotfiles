@@ -8,6 +8,7 @@ function GitBranch()
     local handle = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")
     local result = handle:read("*a")
     handle:close()
+    result = result:gsub("[\n\r]", "")
     return result
 end
 
