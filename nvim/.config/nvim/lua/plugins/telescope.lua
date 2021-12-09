@@ -64,6 +64,7 @@ keymap('n', '<leader>c', ':lua require("telescope.builtin").git_commits()<cr>', 
 keymap('n', '<A-b>',     ':lua require("telescope.builtin").git_branches()<cr>',                                                 opts )
 keymap('n', '<A-t>',     ':lua require("telescope.builtin").treesitter()<cr>',                                                   opts )
 keymap('n', '<A-q>',     ':lua require("telescope.builtin").quickfix()<cr>',                                                     opts )
+keymap("n", "<space>b",  ':lua require("telescope.builtin").buffers()<cr>',                                                     opts )
 keymap('n', '<space>ca', ':lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_dropdown({}))<cr>', opts )
 
 keymap("v", "<Leader>rt", [[ <Esc><Cmd>lua M.refactors()<CR>]], opts)
