@@ -18,6 +18,7 @@ require("colorizer").setup()
 require('marks').setup({})
 -- neoclip
 require('neoclip').setup()
+keymap('n', '<leader-c>', ':Telescope neoclip "<cr>', opts)
 
 -- harpoon
 require('harpoon').setup()
