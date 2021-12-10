@@ -10,7 +10,7 @@ keymap('n', '<space>n', ':bn<cr>', opts)
 keymap('n', '<space>p', ':bp<cr>', opts)
 keymap('n', 'cc', ':lua StatusClipboard()<cr>', opts)
 keymap('n', '<c-i>', '<c-i>', opts)
-keymap('n', '<A-m', '@:', opts)
+keymap('n', '<A-m>', '@:', opts)
 
 -- Disable highlight
 keymap('n', '<A-h>', ':noh<cr>', opts)
