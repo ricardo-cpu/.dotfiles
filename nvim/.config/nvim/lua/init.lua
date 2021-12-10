@@ -15,7 +15,6 @@ local init_modules = {
     "plugins.lsp",
     "plugins.telescope",
     "plugins.cmp",
-    "plugins.lspkind_icons",
     "plugins.debugger",
     "plugins.treesitter",
     "plugins.others"

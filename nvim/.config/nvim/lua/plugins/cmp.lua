@@ -1,17 +1,14 @@
 local cmp = require "cmp"
 
+
+local lspkind = require('lspkind')
 -- nvim-cmp setup
 cmp.setup {
     formatting = {
-        format = function(entry, vim_item)
-            vim_item.kind = string.format(
-            "%s %s",
-            require("plugins.lspkind_icons").icons[vim_item.kind],
-            vim_item.kind
-            )
-
-            return vim_item
-        end,
+        format = lspkind.cmp_format({
+            with_text = true,
+            maxwidth = 50,
+        })
     },
     mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
