@@ -71,7 +71,7 @@ keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
 set_var('asynctasks_term_pos', 'bottom')
 
 -- nvim-tree.lua
-require('nvim-tree').setup{open_on_setup = true, view = {side = 'right'}}
+require('nvim-tree').setup{view = {side = 'right'}}
 keymap('n', '<leader>nn', ':NvimTreeToggle<cr>', opts )
 vim.cmd([[ au BufEnter NvimTree hi clear StatusLine ]])
 
