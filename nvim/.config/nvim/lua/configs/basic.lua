@@ -3,10 +3,8 @@ local o = vim.o
 function StatusClipboard()
     if o.clipboard == 'unnamedplus' then
         o.clipboard = ''
-        vim.cmd([[ echo "clipboard off" ]])
     else
         o.clipboard = 'unnamedplus'
-        vim.cmd([[ echo "clipboard on" ]])
     end
 end
 
