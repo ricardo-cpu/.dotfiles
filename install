@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# starship
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
 # download oh-my-zsh and plugins
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended

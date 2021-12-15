@@ -34,8 +34,8 @@ source ~/.zsh-autopair/autopair.zsh
 autopair-init
 
 # alias
-alias dev='~/Documentos/dev/'
-dev="$HOME/Documentos/dev"
+alias dev='~/Documents/dev/'
+dev="$HOME/Documents/dev"
 alias sites='/srv/http/'
 
 alias starvim='vim -S ~/.vim/pack/plugins/opt/SWTC.Vim/starwars.vim'
