@@ -12,6 +12,10 @@ gg () {
     xdg-open "https://www.google.com/search?q=$search" > /dev/null 2> /dev/null
 }
 
+h () {
+    printf "%'d\n" $( $@ )
+}
+
 # ZSH_THEME="bira"
 eval "$(starship init zsh)"
 
