@@ -10,13 +10,13 @@ local init_modules = {
     "configs.basic",
     "configs.keymaps",
     "configs.options",
-    "configs.statusline",
     "plugins.packer",
     "plugins.lsp",
     "plugins.telescope",
     "plugins.cmp",
     "plugins.debugger",
     "plugins.treesitter",
+    "plugins.statusline",
     "plugins.others"
 }
 

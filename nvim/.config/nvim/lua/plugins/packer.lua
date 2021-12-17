@@ -28,6 +28,7 @@ packer.startup(function(use)
     -- Lua Plugins Section
     use "AckslD/nvim-neoclip.lua"
     use 'akinsho/bufferline.nvim'
+    use 'famiu/feline.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'p00f/nvim-ts-rainbow'
