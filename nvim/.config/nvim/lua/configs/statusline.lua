@@ -1,3 +1,12 @@
+require "bufferline".setup()
+
+vim.cmd([[ au VimEnter * hi BufferLineTab          guibg=NONE ]])
+vim.cmd([[ au VimEnter * hi BufferLineFill         guibg=NONE ]])
+vim.cmd([[ au VimEnter * hi BufferLineBackground   guibg=NONE ]])
+vim.cmd([[ au VimEnter * hi BufferLineSeparator    guibg=NONE ]])
+vim.cmd([[ au VimEnter * hi BufferLineSeparator    guibg=NONE ]])
+vim.cmd([[ au VimEnter * hi BufferLineCloseButton  guibg=NONE ]])
+
 function GitBranch()
     local handle = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")
     local result = handle:read("*a")
