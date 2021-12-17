@@ -26,6 +26,7 @@ o.foldmethod = "expr"
 o.number = true
 o.backup = true
 o.backupext = '.bak'
+o.equalalways = false
 vim.cmd([[set backupdir=/tmp/backup]])
 
 -- Font options
