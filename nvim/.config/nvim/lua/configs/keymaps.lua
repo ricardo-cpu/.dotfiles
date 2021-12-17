@@ -12,6 +12,9 @@ keymap('n', 'cc', ':lua StatusClipboard()<cr>', opts)
 keymap('n', '<c-i>', '<c-i>', opts)
 keymap('n', '<A-m>', '@:', opts)
 
+-- Terminal Esc
+keymap('t', '<esc>', [[<C-\><C-n>]], opts)
+
 -- Disable highlight
 keymap('n', '<A-h>', ':noh<cr>', opts)
 
