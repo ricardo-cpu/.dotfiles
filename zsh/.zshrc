@@ -13,7 +13,7 @@ gg () {
 }
 
 h () {
-    printf "%'d\n" $( $@ )
+    printf "%'d\n" $@
 }
 
 # ZSH_THEME="bira"
@@ -57,12 +57,15 @@ alias extract='file-roller -h'
 alias meta='exiftool -d "%e %B de %Y as %r %a"'
 alias cleanmeta='exiftool -all:all= -overwrite_original '
 alias clip='xclip -selection clipboard'
+alias dj='django-admin '
+
+alias icat='kitty +kitten icat'
+alias ktab='kitty @ launch --type=tab --keep-focus'
+alias name='kitty @ set-tab-title '
 
 alias open='xdg-open > /dev/null 2>/dev/null'
 alias restart='systemctl restart'
 alias bat='bat --style numbers'
-alias icat='kitty +kitten icat'
-alias ktab='kitty @ launch --type=tab --keep-focus'
 alias fzf="fzf --preview 'bat -P -n {}'"
 alias du='du -h'
 alias x='chmod +x'
