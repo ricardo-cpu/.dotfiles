@@ -1,14 +1,19 @@
 local cmp = require "cmp"
-
-
 local lspkind = require('lspkind')
--- nvim-cmp setup
 cmp.setup {
+    snippet = {
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body)
+      end,
+    },
     formatting = {
         format = lspkind.cmp_format({
             with_text = true,
             maxwidth = 50,
         })
+    },
+    confirmation = {
+        completeopt = 'menu,menuone,noinsert'
     },
     mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -23,4 +28,26 @@ cmp.setup {
         { name = "nvim_lua" },
         { name = "path" },
     },
+    documentation = {
+        border = "rounded",
+        winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+        max_width = 50,
+        min_width = 50,
+        max_height = math.floor(vim.o.lines * 0.4),
+        min_height = 3,
+    }
 }
+
+cmp.setup.cmdline('/', {
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
+})
