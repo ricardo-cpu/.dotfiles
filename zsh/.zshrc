@@ -21,7 +21,7 @@ eval "$(starship init zsh)"
 
 plugins=(
     dotenv
-    virtualenv
+    autoswitch_virtualenv
     asdf
 	git
 	zsh-syntax-highlighting
