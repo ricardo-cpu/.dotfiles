@@ -52,6 +52,7 @@ alias sudoe='sudo -E vim'
 alias gc='git commit -v -m'
 alias ammend='git commit --amend'
 alias root='cd $(git rev-parse --show-toplevel 2>/dev/null)'
+root=$(git rev-parse --show-toplevel 2>/dev/null)
 
 alias tag='ctags -R --exclude=node_modules --exclude=.git'
 alias extract='file-roller -h'
@@ -73,6 +74,7 @@ alias x='chmod +x'
 alias xargs='xargs '
 alias d=docker
 alias p=python
+alias ip=ipython
 alias wget="wget -c"
 alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignore' -exec rm -rf {} \;; find . -iname '.github' -exec rm -rf {} \;"
 alias gs=/usr/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/service/daemon.js
