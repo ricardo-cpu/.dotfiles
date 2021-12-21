@@ -24,6 +24,7 @@ packer.startup(function(use)
     use 'junegunn/vim-easy-align'
     use 'FooSoft/vim-argwrap'
     use 'tpope/vim-endwise'
+    use 'sbdchd/neoformat'
 
     -- Lua Plugins Section
     use "AckslD/nvim-neoclip.lua"
