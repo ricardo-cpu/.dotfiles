@@ -64,7 +64,6 @@ alias dj='django-admin '
 
 alias icat='kitty +kitten icat'
 alias ktab='kitty @ launch --type=tab --keep-focus'
-alias name='kitty @ set-tab-title '
 
 alias open='xdg-open > /dev/null 2>/dev/null'
 alias restart='systemctl restart'
