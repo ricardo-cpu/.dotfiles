@@ -47,6 +47,7 @@ packer.startup(function(use)
     use 'windwp/nvim-ts-autotag'
     use 'lewis6991/impatient.nvim'
     use 'ThePrimeagen/refactoring.nvim'
+    use 'luukvbaal/stabilize.nvim'
 
     -- treesitter
     use 'nvim-treesitter/nvim-treesitter-textobjects'

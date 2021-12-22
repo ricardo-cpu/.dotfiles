@@ -20,6 +20,14 @@ require('marks').setup({})
 require('neoclip').setup()
 keymap('n', '<leader>c', [[:Telescope neoclip ]], {})
 
+-- stabilize.nvim
+require("stabilize").setup({
+    ignore = {
+        filetype = {},
+        buftype = {}
+    },
+})
+
 -- harpoon
 require('harpoon').setup()
 keymap('n', '<leader>n', ':lua require("harpoon.mark").add_file()<cr>', opts)
