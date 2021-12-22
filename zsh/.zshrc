@@ -2,6 +2,7 @@ export PATH=$PATH:~/.local/share/nvim/site/pack/packer/start/asynctasks.vim/bin/
 export PATH=$PATH:~/.dotfiles/scripts/
 export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 export PATH=$PATH:~/.luarocks/bin
+export PATH=$PATH:~/.cargo/bin
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export VISUAL=nvim
