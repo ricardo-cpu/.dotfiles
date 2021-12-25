@@ -3,12 +3,6 @@ local keymap = vim.api.nvim_set_keymap
 
 local lsp_installer = require("nvim-lsp-installer")
 
-lsp_installer.on_server_ready(function(server)
-    local options = {}
-    server:setup(options)
-    vim.cmd [[ do User LspAttachBuffers ]]
-end)
-
 local servers = {
 	"dockerls",
     "sumneko_lua",
@@ -30,17 +24,6 @@ for _, name in pairs(servers) do
 	end
 end
 
-vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticError" })
-vim.fn.sign_define("DiagnosticSignInfo",  { text = "", texthl = "DiagnosticInfo" })
-vim.fn.sign_define("DiagnosticSignHint",  { text = "", texthl = "DiagnosticHint" })
-vim.fn.sign_define("DiagnosticSignWarn",  { text = "", texthl = "DiagnosticWarn" })
-
-local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticsSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
 capabilities.textDocument.completion.completionItem.preselectSupport = true
@@ -57,6 +40,23 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     },
 }
 
+
+lsp_installer.on_server_ready(function(server)
+    server:setup({ capabilities = capabilities })
+    vim.cmd [[ do User LspAttachBuffers ]]
+end)
+
+vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticError" })
+vim.fn.sign_define("DiagnosticSignInfo",  { text = "", texthl = "DiagnosticInfo" })
+vim.fn.sign_define("DiagnosticSignHint",  { text = "", texthl = "DiagnosticHint" })
+vim.fn.sign_define("DiagnosticSignWarn",  { text = "", texthl = "DiagnosticWarn" })
+
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
 keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>',           opts)
 keymap('n', 'gr',         '<cmd>lua vim.lsp.buf.references()<CR>',       opts)
 keymap('n', '[d',         '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -65,3 +65,8 @@ keymap('n', 'gd',         '<cmd>lua vim.lsp.buf.definition()<CR>',       opts)
 keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
 keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
 keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+
+require("lsp_signature").setup({
+    handler_opts = { border = "single" },
+})
+

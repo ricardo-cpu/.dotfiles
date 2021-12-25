@@ -76,5 +76,6 @@ packer.startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/cmp-calc'
     use 'hrsh7th/cmp-path'
+    use 'ray-x/lsp_signature.nvim'
 
 end)
