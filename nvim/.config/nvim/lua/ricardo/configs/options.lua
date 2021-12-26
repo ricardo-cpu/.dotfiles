@@ -27,7 +27,9 @@ o.number = true
 o.backup = true
 o.backupext = '.bak'
 o.equalalways = false
+o.undofile = true
 vim.cmd([[set backupdir=/tmp/backup]])
+vim.cmd([[ set undodir=~/.vim/undodir ]])
 
 -- Font options
 o.gfn = "Ubuntu Mono Regular"

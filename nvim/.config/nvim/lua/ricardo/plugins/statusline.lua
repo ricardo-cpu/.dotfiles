@@ -7,7 +7,7 @@ vim.cmd([[ au VimEnter * hi BufferLineSeparator    guibg=NONE ]])
 vim.cmd([[ au VimEnter * hi BufferLineSeparator    guibg=NONE ]])
 vim.cmd([[ au VimEnter * hi BufferLineCloseButton  guibg=NONE ]])
 
-local colors = require("colors.onedark")
+local colors = require("ricardo.colors.onedark")
 local lsp = require "feline.providers.lsp"
 
 local icon_styles = {

@@ -41,6 +41,8 @@ keymap('n', '<f4>', ':lua require("harpoon.ui").nav_file(4)<cr>', opts)
 vim.cmd("let g:vsnip_snippet_dirs = ['" .. GitDir() .. '/.vsnip' .. "', '~/.vsnip']")
 vim.cmd("let g:vsnip_filetypes = {}")
 vim.cmd("let g:vsnip_filetypes.markdown = ['tex']")
+keymap('i', '<tab>', "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>'", { noremap = true, silent = true, expr = true })
+keymap('s', '<tab>', "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>'", { noremap = true, silent = true, expr = true })
 
 -- Goyo
 set_var('goyo_width', 100)
@@ -57,11 +59,9 @@ endf
 ]])
 
 -- AsyncRun/ AsyncTasks
-
 set_var('asyncrun_open', 4)
-
-keymap('n', 'cn', ':cn<cr>', opts)
-keymap('n', 'cp', ':cp<cr>', opts)
+keymap('n', '<F11>', ':silent! AsyncTask run<cr>',   opts)
+keymap('n', '<F12>', ':silent! AsyncTask build<cr>', opts)
 
 -- Hop.nvim
 require('hop').setup()

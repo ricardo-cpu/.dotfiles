@@ -7,17 +7,17 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 local init_modules = {
-    "configs.basic",
-    "configs.keymaps",
-    "configs.options",
-    "plugins.packer",
-    "plugins.lsp",
-    "plugins.telescope",
-    "plugins.cmp",
-    "plugins.debugger",
-    "plugins.treesitter",
-    "plugins.statusline",
-    "plugins.others"
+    "ricardo.configs.basic",
+    "ricardo.configs.keymaps",
+    "ricardo.configs.options",
+    "ricardo.plugins.packer",
+    "ricardo.plugins.lsp",
+    "ricardo.plugins.telescope",
+    "ricardo.plugins.cmp",
+    "ricardo.plugins.debugger",
+    "ricardo.plugins.treesitter",
+    "ricardo.plugins.statusline",
+    "ricardo.plugins.others"
 }
 
 for _, module in ipairs(init_modules) do
