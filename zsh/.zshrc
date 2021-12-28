@@ -17,6 +17,10 @@ h () {
     printf "%'d\n" $@
 }
 
+md () {
+    mkdir -p $@ && cd $1
+}
+
 # ZSH_THEME="bira"
 eval "$(starship init zsh)"
 
@@ -82,4 +86,5 @@ alias gs=~/.local/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/se
 alias server='python -m http.server'
 . $HOME/.asdf/asdf.sh
 unalias gg
+unalias md
 
