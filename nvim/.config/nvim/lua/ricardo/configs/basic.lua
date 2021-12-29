@@ -26,7 +26,7 @@ function SourceVim()
 end
 
 function SourceSession()
-    if vim.fn.filereadable(GitDir() .. '/Session.vim') == 1 then
+    if vim.fn.expand('%') == '' and vim.fn.filereadable(GitDir() .. '/Session.vim') == 1 then
         vim.cmd("so " .. GitDir() .. "/Session.vim" )
     end
 end
