@@ -1,3 +1,4 @@
+export PATH=$PATH:~/.local/bin/
 export PATH=$PATH:~/.local/share/nvim/site/pack/packer/start/asynctasks.vim/bin/
 export PATH=$PATH:~/.dotfiles/scripts/
 export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
