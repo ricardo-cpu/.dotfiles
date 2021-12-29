@@ -9,7 +9,6 @@ function StatusClipboard()
 end
 
 -- .vim file functions
-
 function GitDir()
     local handle = io.popen('git rev-parse --show-toplevel 2>/dev/null')
     local result = handle:read("*a")
@@ -26,8 +25,15 @@ function SourceVim()
     end
 end
 
+function SourceSession()
+    if vim.fn.filereadable(GitDir() .. '/Session.vim') == 1 then
+        vim.cmd("so " .. GitDir() .. "/Session.vim" )
+    end
+end
+
 vim.cmd([[au! bufwritepost ~/.vimrc source ~/.vimrc]])
 vim.cmd[[ au! VimEnter * lua SourceVim() ]]
+vim.cmd([[ au! VimEnter * lua SourceSession() ]])
 
 -- Backup directory
 
