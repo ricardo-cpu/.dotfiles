@@ -1,6 +1,6 @@
 [user]
-	email = earthdoor5702291@gmail.com
-	name = Ricardo alves da silva
+    name = Ricardo Alves da Silva
+	email = ricardcpu@gmail.com
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
