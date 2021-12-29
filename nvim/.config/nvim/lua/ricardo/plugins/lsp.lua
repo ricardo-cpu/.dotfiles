@@ -62,9 +62,6 @@ keymap('n', 'gr',         '<cmd>lua vim.lsp.buf.references()<CR>',       opts)
 keymap('n', '[d',         '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 keymap('n', ']d',         '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 keymap('n', 'gd',         '<cmd>lua vim.lsp.buf.definition()<CR>',       opts)
-keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 
 require("lsp_signature").setup({
     handler_opts = { border = "single" },
