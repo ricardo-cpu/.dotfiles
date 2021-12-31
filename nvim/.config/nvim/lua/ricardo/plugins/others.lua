@@ -19,6 +19,7 @@ require('marks').setup({})
 -- neoclip
 require('neoclip').setup()
 keymap('n', '<leader>c', [[:Telescope neoclip ]], {})
+keymap('n', '<A-y>', ':lua require("telescope").extensions.neoclip.default()<cr>', opts )
 
 -- stabilize.nvim
 require("stabilize").setup({
@@ -41,8 +42,8 @@ keymap('n', '<f4>', ':lua require("harpoon.ui").nav_file(4)<cr>', opts)
 vim.cmd("let g:vsnip_snippet_dirs = ['" .. GitDir() .. '/.vsnip' .. "', '~/.vsnip']")
 vim.cmd("let g:vsnip_filetypes = {}")
 vim.cmd("let g:vsnip_filetypes.markdown = ['tex']")
-keymap('i', '<tab>', "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>'", { noremap = true, silent = true, expr = true })
-keymap('s', '<tab>', "vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>'", { noremap = true, silent = true, expr = true })
+vim.cmd([[ imap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>']])
+vim.cmd([[ smap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>']])
 
 -- Goyo
 set_var('goyo_width', 100)
@@ -107,3 +108,24 @@ set_var('user_emmet_expandabbr_key', '<localleader>')
 
 -- Matchup
 vim.g.loaded_matchit = 1
+
+-- refactoring
+require("telescope").load_extension("refactoring")
+
+keymap(
+	"v",
+	"<leader>t",
+	"<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+	{ noremap = true }
+)
+
+keymap(
+	"n",
+	"<space>p",
+	":lua require('refactoring').debug.printf({below = false})<CR>",
+	{ noremap = true }
+)
+
+keymap("v", "<space>v",  ":lua require('refactoring').debug.print_var({})<CR>", { noremap = true })
+keymap("n", "<space>cc", ":lua require('refactoring').debug.cleanup({})<CR>",   { noremap = true })
+
