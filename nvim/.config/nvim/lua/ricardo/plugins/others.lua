@@ -107,25 +107,25 @@ set_var('multi_cursor_quit_key            ', '<Esc>' )
 set_var('user_emmet_expandabbr_key', '<localleader>')
 
 -- Matchup
-vim.g.loaded_matchit = 1
+vim.g.loaded_tatchit = 1
 
 -- refactoring
 require("telescope").load_extension("refactoring")
 
 keymap(
 	"v",
-	"<leader>t",
+	"<space>rt",
 	"<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
 	{ noremap = true }
 )
 
 keymap(
 	"n",
-	"<space>p",
+	"<space>rp",
 	":lua require('refactoring').debug.printf({below = false})<CR>",
 	{ noremap = true }
 )
 
-keymap("v", "<space>v",  ":lua require('refactoring').debug.print_var({})<CR>", { noremap = true })
-keymap("n", "<space>cc", ":lua require('refactoring').debug.cleanup({})<CR>",   { noremap = true })
+keymap("v", "<space>rp", ":lua require('refactoring').debug.print_var({})<CR>", { noremap = true })
+keymap("n", "<space>rc", ":lua require('refactoring').debug.cleanup({})<CR>",   { noremap = true })
 
