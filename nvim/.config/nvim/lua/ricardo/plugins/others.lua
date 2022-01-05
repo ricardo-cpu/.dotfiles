@@ -46,6 +46,8 @@ vim.cmd("let g:vsnip_filetypes = {}")
 vim.cmd("let g:vsnip_filetypes.markdown = ['tex']")
 vim.cmd([[ imap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>']])
 vim.cmd([[ smap <expr> <tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<tab>']])
+vim.cmd([[ imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>' ]])
+vim.cmd([[ smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>' ]])
 
 -- Goyo
 set_var('goyo_width', 100)
