@@ -89,3 +89,4 @@ alias server='python -m http.server'
 unalias gg
 unalias md
 
+source ~/.zshrc_private
