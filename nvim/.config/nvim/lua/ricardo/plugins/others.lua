@@ -107,9 +107,6 @@ set_var('multi_cursor_prev_key            ', '<C-p>' )
 set_var('multi_cursor_skip_key            ', '<C-x>' )
 set_var('multi_cursor_quit_key            ', '<Esc>' )
 
--- Emmet
-set_var('user_emmet_expandabbr_key', '<localleader>')
-
 -- Matchup
 vim.g.loaded_tatchit = 1
 
