@@ -14,7 +14,7 @@ rm -rf ~/.zshrc
 
 # set dotfiles
 cd ~/.dotfiles
-STOW_FOLDERS="git,scripts,kitty,i3,zsh,tmux"
+STOW_FOLDERS="git,scripts,kitty,i3,zsh,tmux,wallpapers"
 
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
