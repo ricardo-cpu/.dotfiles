@@ -35,6 +35,7 @@ plugins=(
     zsh-autosuggestions
     vi-mode
     github
+    heroku
 )
 
 source $ZSH/oh-my-zsh.sh
