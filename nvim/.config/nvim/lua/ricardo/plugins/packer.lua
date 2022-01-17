@@ -12,7 +12,7 @@ packer.startup(function(use)
     use {'iamcco/mathjax-support-for-mkdp', run = ':call mkdp#util#install()', after = {'markdown-preview.nvim'}}
 
     -- General Plugins
-    use 'steelsojka/pears.nvim'
+    use 'jiangmiao/auto-pairs'
     use 'andymass/vim-matchup'
     use 'mg979/vim-visual-multi'
     use 'skywind3000/asynctasks.vim'
