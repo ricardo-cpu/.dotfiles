@@ -2,8 +2,6 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 local set_var = vim.api.nvim_set_var
 
--- pears.nvim
-require "pears".setup()
 -- devicons
 require("nvim-web-devicons").setup()
 -- indent line
