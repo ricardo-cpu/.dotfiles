@@ -26,7 +26,7 @@ packer.startup(function(use)
     use 'tpope/vim-endwise'
     use 'sbdchd/neoformat'
 
-    -- Lua Plugins Section
+    -- Lua Plugins
     use "AckslD/nvim-neoclip.lua"
     use 'akinsho/bufferline.nvim'
     use 'famiu/feline.nvim'
@@ -37,23 +37,40 @@ packer.startup(function(use)
     use 'phaazon/hop.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'numtostr/FTerm.nvim'
-    use 'chentau/marks.nvim'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'terrortylor/nvim-comment'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'lewis6991/gitsigns.nvim'
     use 'ThePrimeagen/harpoon'
     use 'windwp/nvim-ts-autotag'
-    use 'lewis6991/impatient.nvim'
     use 'ThePrimeagen/refactoring.nvim'
     use 'luukvbaal/stabilize.nvim'
+    use {
+        'chentau/marks.nvim',
+        config = function() require('marks').setup({}) end
+    }
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = function() require("colorizer").setup() end
+    }
+    use {
+        'terrortylor/nvim-comment',
+        config = function() require("nvim_comment").setup() end
+    }
+    use {
+        'kyazdani42/nvim-web-devicons',
+        config = function() require("nvim-web-devicons").setup() end
+    }
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require("indent_blankline").setup { buftype_exclude = {"terminal"}, char = "|" } end
+    }
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function() require('gitsigns').setup{ current_line_blame = true } end
+    }
 
     -- treesitter
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'nvim-treesitter/playground'
     use 'romgrk/nvim-treesitter-context'
-    use {'nvim-treesitter/nvim-treesitter',     run = ':TSUpdate'}
+    use 'nvim-treesitter/nvim-treesitter'
 
     -- Snippets Plugins
     use 'hrsh7th/vim-vsnip'

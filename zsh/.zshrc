@@ -51,7 +51,7 @@ dev="$HOME/Documents/dev"
 alias sites='/srv/http/'
 
 alias starvim='vim -S ~/.vim/pack/plugins/opt/SWTC.Vim/starwars.vim'
-alias vi="vim -u NONE "
+alias vi="vim -u NONE -c 'syntax on' -c 'colo onedark' -c 'set number'"
 alias vim='nvim'
 alias as='asynctask'
 alias sudoe='sudo -E vim'

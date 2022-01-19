@@ -1,21 +1,7 @@
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local opts    = { noremap = true, silent = true }
+local keymap  = vim.api.nvim_set_keymap
 local set_var = vim.api.nvim_set_var
 
--- devicons
-require("nvim-web-devicons").setup()
--- indent line
-require("indent_blankline").setup {buftype_exclude = {"terminal"}, char = "|"}
--- gitsigns
-require('gitsigns').setup{current_line_blame = true}
--- impatient
-require('impatient')
--- nvim-comment
-require("nvim_comment").setup()
--- colorizer
-require("colorizer").setup()
--- marks
-require('marks').setup({})
 -- neoclip
 require('neoclip').setup()
 keymap('n', '<leader>c', [[:Telescope neoclip ]], {})
@@ -106,7 +92,7 @@ set_var('multi_cursor_skip_key            ', '<C-x>' )
 set_var('multi_cursor_quit_key            ', '<Esc>' )
 
 -- Matchup
-vim.g.loaded_tatchit = 1
+vim.g.loaded_matchit = 1
 
 -- refactoring
 require("telescope").load_extension("refactoring")
