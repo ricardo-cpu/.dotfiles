@@ -4,9 +4,9 @@ local o = vim.o
 o.ruler = true
 o.hidden = true
 o.backspace = "indent,eol,start"
-o.whichwrap =  "<,>,h,l,b,s"
-o.completeopt = 'menu,menuone,noselect'
-o.shortmess = 'filnxtToOFc'
+o.whichwrap = "<,>,h,l,b,s"
+o.completeopt = "menu,menuone,noselect"
+o.shortmess = "filnxtToOFc"
 o.ignorecase = true
 o.smartcase = true
 o.hlsearch = true
@@ -20,12 +20,12 @@ o.siso = 20
 o.splitright = true
 o.splitbelow = true
 o.foldenable = false
-o.foldcolumn = '0'
+o.foldcolumn = "0"
 o.signcolumn = "yes"
 o.foldmethod = "expr"
 o.number = true
 o.backup = true
-o.backupext = '.bak'
+o.backupext = ".bak"
 o.equalalways = false
 o.undofile = true
 o.sessionoptions = "buffers,curdir,folds,tabpages,winsize,terminal,options,localoptions,winpos,resize"
@@ -59,19 +59,19 @@ o.swapfile = false
 o.autoread = true
 
 -- Omnifunc
-o.omnifunc='syntaxcomplete#Complete'
+o.omnifunc = "syntaxcomplete#Complete"
 
 -- Language
-o.langmenu = 'en'
-o.spelllang = 'en'
+o.langmenu = "en"
+o.spelllang = "en"
 o.encoding = "utf-8"
 
 -- Turn on the Wild menu
 o.wildmenu = true
 -- Ignore compiled files
 o.wildignore = "*.so, *.dll, *.swp, .egg, *.jar, *.class, *.pyc, *.pyo, *.bin, *.dex, node_modules"
-o.path = '.,,,**'
-vim.cmd('set path+=' .. GitDir())
+o.path = ".,,,**"
+vim.cmd("set path+=" .. GitDir())
 
 -- No annoying sound on errors
 o.errorbells = false
@@ -85,7 +85,7 @@ o.stal = 2
 o.laststatus = 2
 
 -- Increment
-o.nrformats = 'bin,octal,hex,alpha'
+o.nrformats = "bin,octal,hex,alpha"
 
 -- Sessions Options
 o.sessionoptions = "buffers,curdir,folds,tabpages,winsize,terminal,options,localoptions"
