@@ -5,6 +5,9 @@ local keymap = vim.api.nvim_set_keymap
 vim.api.nvim_set_var("mapleader", ",")
 vim.api.nvim_set_var("localmapleader", [[\]])
 
+-- toggle theme
+keymap("n", "<leader>cs", ":lua require('onedark').toggle()<cr>", opts)
+
 -- select all
 keymap("n", "aa", "ggVG", opts)
 
