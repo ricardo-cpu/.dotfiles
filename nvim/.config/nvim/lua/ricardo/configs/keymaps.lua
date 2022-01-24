@@ -47,7 +47,7 @@ keymap("n", "<space><tab>", "i<cr><esc>", opts)
 keymap("n", "<space><space>", "i<space><esc>", opts)
 keymap("n", "<c-j>", "o<esc>", opts)
 keymap("n", "<c-k>", "O<esc>", opts)
-keymap("i", "<c-l>", "<del>", opts)
+keymap("i", "<M-l>", "<del>", opts)
 
 -- Shiftwidth
 keymap("n", "<A-,>", "<ap", opts)
