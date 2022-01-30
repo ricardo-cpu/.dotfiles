@@ -11,6 +11,7 @@ o.ignorecase = true
 o.smartcase = true
 o.hlsearch = true
 o.incsearch = true
+o.inccommand = "split"
 o.lazyredraw = true
 o.magic = true
 o.showmatch = true
@@ -29,7 +30,7 @@ o.backupext = ".bak"
 o.equalalways = false
 o.undofile = true
 o.sessionoptions = "buffers,curdir,folds,tabpages,winsize,terminal,options,localoptions,winpos,resize"
-vim.cmd([[set backupdir=/tmp/backup]])
+vim.cmd([[ set backupdir=/tmp/backup ]])
 vim.cmd([[ set undodir=~/.vim/undodir ]])
 
 -- Font options
