@@ -73,7 +73,6 @@ alias ktab='kitty @ launch --type=tab --keep-focus'
 
 alias open='xdg-open > /dev/null 2>/dev/null'
 alias restart='systemctl restart'
-alias bat='bat --style numbers'
 alias fzf="fzf --preview 'bat -P -n {}'"
 alias du='du -h'
 alias x='chmod +x'
