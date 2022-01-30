@@ -1,9 +1,9 @@
-export PATH=$PATH:~/.local/bin/
-export PATH=$PATH:~/.local/share/nvim/site/pack/packer/start/asynctasks.vim/bin/
-export PATH=$PATH:~/.dotfiles/scripts/
-export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
-export PATH=$PATH:~/.luarocks/bin
-export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/.local/share/nvim/site/pack/packer/start/asynctasks.vim/bin/
+export PATH=$PATH:$HOME/.dotfiles/scripts/
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
+export PATH=$PATH:$HOME/.luarocks/bin
+export PATH=$PATH:$HOME/.cargo/bin
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export VISUAL=nvim
@@ -42,15 +42,15 @@ source $ZSH/oh-my-zsh.sh
 alias grep='grep --color'
 
 # auto pair plugin
-source ~/.zsh-autopair/autopair.zsh
+source $HOME/.zsh-autopair/autopair.zsh
 autopair-init
 
 # alias
-alias dev='~/Documents/dev/'
+alias dev='$HOME/Documents/dev/'
 dev="$HOME/Documents/dev"
 alias sites='/srv/http/'
 
-alias starvim='vim -S ~/.vim/pack/plugins/opt/SWTC.Vim/starwars.vim'
+alias starvim='vim -S $HOME/.vim/pack/plugins/opt/SWTC.Vim/starwars.vim'
 alias vi="vim -u NONE -c 'syntax on' -c 'colo onedark' -c 'set number'"
 alias vim='nvim'
 alias as='asynctask'
@@ -82,11 +82,12 @@ alias p=python
 alias ip=ipython
 alias wget="wget -c"
 alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignore' -exec rm -rf {} \;; find . -iname '.github' -exec rm -rf {} \;"
-alias gs=~/.local/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/service/daemon.js
+GSCONNECT="$HOME/.local/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/service/daemon.js"
+alias gs="$GSCONNECT -d $( $GSCONNECT -l )"
 
 alias server='python -m http.server'
 . $HOME/.asdf/asdf.sh
 unalias gg
 unalias md
 
-source ~/.zshrc_private
+source $HOME/.zshrc_private
