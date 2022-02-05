@@ -104,4 +104,6 @@ function GitBranch()
 end
 
 vim.cmd([[ lua vim.g.git_branch = " " .. GitBranch() .. " "]])
-vim.cmd([[ setl statusline=%#TabLineSel#%f\ %h%w%m%r\ %#QuickFixLine#%{&clipboard}%#TabLineSel#\ %=%(%l,%c%V%=\ %p%%%#DiagnosticError#%{g:git_branch}%{g:asyncrun_status}%) ]])
+vim.cmd(
+	[[ setl statusline=%#TabLineSel#%f\ %h%w%m%r\ %#QuickFixLine#%{&clipboard}%#TabLineSel#\ %=%(%l,%c%V%=\ %p%%%#DiagnosticError#%{g:git_branch}%{g:asyncrun_status}%) ]]
+)

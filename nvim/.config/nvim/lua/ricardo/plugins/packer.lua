@@ -25,7 +25,7 @@ packer.startup(function(use)
 	use("FooSoft/vim-argwrap")
 	use("tpope/vim-endwise")
 	use("sbdchd/neoformat")
-    use("mattn/emmet-vim")
+	use("mattn/emmet-vim")
 
 	-- Lua Plugins
 	use("AckslD/nvim-neoclip.lua")
