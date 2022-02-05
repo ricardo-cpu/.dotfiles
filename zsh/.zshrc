@@ -61,7 +61,7 @@ alias ammend='git commit --amend'
 alias root='cd $(git rev-parse --show-toplevel 2>/dev/null)'
 root=$(git rev-parse --show-toplevel 2>/dev/null)
 
-alias tag='ctags -R --exclude=node_modules --exclude=.git'
+alias tag='ctags -R $(git ls-files)'
 alias extract='file-roller -h'
 alias meta='exiftool -d "%e %B de %Y as %r %a"'
 alias cleanmeta='exiftool -all:all= -overwrite_original '
