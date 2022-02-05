@@ -17,23 +17,15 @@ function GitDir()
 	return result
 end
 
-function SourceVim()
-	if vim.fn.filereadable(".vim") == 1 then
-		vim.cmd([[ source .vim ]])
-	else
-		vim.cmd("silent! source " .. GitDir() .. "/.vim")
-	end
+if vim.fn.filereadable(".vim") == 1 then
+	vim.cmd([[ source .vim ]])
+else
+	vim.cmd("silent! source " .. GitDir() .. "/.vim")
 end
 
-function SourceSession()
-	if vim.fn.expand("%") == "" and vim.fn.filereadable(GitDir() .. "/Session.vim") == 1 then
-		vim.cmd("so " .. GitDir() .. "/Session.vim")
-	end
+if vim.fn.expand("%") == "" and vim.fn.filereadable(GitDir() .. "/Session.vim") == 1 then
+	vim.cmd("so " .. GitDir() .. "/Session.vim")
 end
-
-vim.cmd([[au! bufwritepost ~/.vimrc source ~/.vimrc]])
-vim.cmd([[ au! VimEnter * lua SourceVim() ]])
-vim.cmd([[ au! VimEnter * lua SourceSession() ]])
 
 -- Backup directory
 
