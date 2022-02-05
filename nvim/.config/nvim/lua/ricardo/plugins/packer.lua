@@ -26,6 +26,7 @@ packer.startup(function(use)
 	use("tpope/vim-endwise")
 	use("sbdchd/neoformat")
 	use("mattn/emmet-vim")
+	use("tpope/vim-commentary")
 
 	-- Lua Plugins
 	use("AckslD/nvim-neoclip.lua")
@@ -52,12 +53,6 @@ packer.startup(function(use)
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
-		end,
-	})
-	use({
-		"terrortylor/nvim-comment",
-		config = function()
-			require("nvim_comment").setup()
 		end,
 	})
 	use({
