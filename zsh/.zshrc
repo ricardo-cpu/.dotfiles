@@ -33,7 +33,6 @@ plugins=(
 	zsh-syntax-highlighting
 	docker
     zsh-autosuggestions
-    vi-mode
     github
     heroku
 )
