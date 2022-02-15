@@ -16,7 +16,7 @@ local init_modules = {
 	"ricardo.plugins.cmp",
 	"ricardo.plugins.debugger",
 	"ricardo.plugins.treesitter",
-	-- "ricardo.plugins.statusline",
+	"ricardo.plugins.statusline",
 	"ricardo.plugins.others",
 }
 
