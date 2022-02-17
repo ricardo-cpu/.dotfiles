@@ -26,15 +26,30 @@ md () {
 eval "$(starship init zsh)"
 
 plugins=(
-    dotenv
-    autoswitch_virtualenv
-    asdf
-	git
-	zsh-syntax-highlighting
-	docker
-    zsh-autosuggestions
+    # git plugins
+    git
+    gitignore
     github
+    # languages plugins
+    asdf
+    npm
+    python
+    pip
+    pyenv
+    pipenv
+    pip
+    rust
+    # zsh plugins
+    vi-mode
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    dotenv
+    # cloud plugins
     heroku
+    aws
+    # others
+    adb
+    docker
 )
 
 source $ZSH/oh-my-zsh.sh
