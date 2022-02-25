@@ -62,13 +62,11 @@ autopair-init
 # alias
 alias dev='$HOME/Projects/'
 dev="$HOME/Projects/"
-alias sites='/srv/http/'
 
 alias starvim='vim -S $HOME/.vim/pack/plugins/opt/SWTC.Vim/starwars.vim'
 alias vi="vim -u NONE -c 'syntax on' -c 'colo onedark' -c 'set number'"
 alias vim='nvim'
 alias as='asynctask'
-alias sudoe='sudo -E vim'
 
 alias gc='git commit -v -m'
 alias ammend='git commit --amend'
@@ -86,18 +84,16 @@ alias icat='kitty +kitten icat'
 alias ktab='kitty @ launch --type=tab --keep-focus'
 
 alias open='xdg-open > /dev/null 2>/dev/null'
-alias restart='systemctl restart'
-alias fzf="fzf --preview 'bat -P -n {}'"
 alias du='du -h'
 alias x='chmod +x'
 alias xargs='xargs '
 alias d=docker
 alias wget="wget -c"
 alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignore' -exec rm -rf {} \;; find . -iname '.github' -exec rm -rf {} \;"
+
 GSCONNECT="$HOME/.local/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/service/daemon.js"
 alias gs="$GSCONNECT -d $( $GSCONNECT -l )"
 
-alias server='python -m http.server'
 . $HOME/.asdf/asdf.sh
 unalias gg
 unalias md
