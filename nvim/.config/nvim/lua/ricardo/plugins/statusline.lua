@@ -64,9 +64,6 @@ components.active[1][2] = {
 		end
 		return " " .. icon .. " " .. filename .. " "
 	end,
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 70
-	end,
 	hl = {
 		fg = colors.white,
 		bg = colors.lightbg,
@@ -79,10 +76,6 @@ components.active[1][3] = {
 	provider = function()
 		local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 		return "  " .. dir_name .. " "
-	end,
-
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 80
 	end,
 
 	hl = {
@@ -205,9 +198,6 @@ components.active[2][1] = {
 
 		return ""
 	end,
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 80
-	end,
 	hl = { fg = colors.green },
 }
 
@@ -219,17 +209,11 @@ components.active[3][1] = {
 			return ""
 		end
 	end,
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 70
-	end,
 	hl = { fg = colors.grey_fg2, bg = colors.statusline_bg },
 }
 
 components.active[3][2] = {
 	provider = "git_branch",
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 70
-	end,
 	hl = {
 		fg = colors.grey_fg2,
 		bg = colors.statusline_bg,
@@ -304,9 +288,6 @@ components.active[3][6] = {
 
 components.active[3][7] = {
 	provider = statusline_style.left,
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 90
-	end,
 	hl = {
 		fg = colors.grey,
 		bg = colors.one_bg,
@@ -315,9 +296,6 @@ components.active[3][7] = {
 
 components.active[3][8] = {
 	provider = statusline_style.left,
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 90
-	end,
 	hl = {
 		fg = colors.green,
 		bg = colors.grey,
@@ -326,9 +304,6 @@ components.active[3][8] = {
 
 components.active[3][9] = {
 	provider = statusline_style.position_icon,
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 90
-	end,
 	hl = {
 		fg = colors.black,
 		bg = colors.green,
@@ -347,10 +322,6 @@ components.active[3][10] = {
 		end
 		local result, _ = math.modf((current_line / total_line) * 100)
 		return " " .. result .. "%% "
-	end,
-
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 90
 	end,
 
 	hl = {
