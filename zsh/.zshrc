@@ -81,7 +81,7 @@ alias clip='xclip -selection clipboard'
 alias dj='django-admin '
 
 alias icat='kitty +kitten icat'
-alias ktab='kitty @ launch --type=tab --keep-focus'
+alias ktab='kitty @ launch --type=tab --keep-focus --hold '
 
 alias open='xdg-open > /dev/null 2>/dev/null'
 alias du='du -h'

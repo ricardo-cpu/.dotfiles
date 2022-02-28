@@ -44,7 +44,7 @@ endfun
 
 -- commands
 vim.cmd([[ command W w ]])
-vim.cmd([[ cnoreabbrev as AsyncRun ]])
+vim.cmd([[ cnoreabbrev as AsyncTask ]])
 
 -- Templates
 
