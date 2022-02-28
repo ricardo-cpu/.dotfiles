@@ -34,7 +34,7 @@ vim.cmd([[ imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'  
 vim.cmd([[ smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>' ]])
 
 -- Goyo
-set_var("goyo_width", 100)
+set_var("goyo_width", 120)
 
 -- Submode
 set_var("submode_keep_leaving_key", 1)
