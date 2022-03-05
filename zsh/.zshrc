@@ -88,6 +88,7 @@ alias du='du -h'
 alias x='chmod +x'
 alias xargs='xargs '
 alias d=docker
+alias dc=docker-compose
 alias wget="wget -c"
 alias findgit="find . -iname '.git' -exec rm -rf {} \;; find . -iname '.gitignore' -exec rm -rf {} \;; find . -iname '.github' -exec rm -rf {} \;"
 
