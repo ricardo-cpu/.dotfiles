@@ -59,3 +59,9 @@ keymap("n", "<leader>e", ":vs " .. GitDir() .. "/.vim<cr>", opts)
 
 -- Switch CWD to the directory of the open buffer
 keymap("n", "cd", ":cd %:p:h<cr>:pwd<cr>", opts)
+
+-- arrow keys
+keymap("i", "<M-h>", "<left>", opts)
+keymap("i", "<M-j>", "<down>", opts)
+keymap("i", "<M-k>", "<up>", opts)
+keymap("i", "<M-l>", "<right>", opts)
