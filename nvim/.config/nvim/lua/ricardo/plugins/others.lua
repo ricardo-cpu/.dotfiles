@@ -2,6 +2,9 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 local set_var = vim.api.nvim_set_var
 
+-- neoformat
+set_var("neoformat_try_node_exe", 1)
+
 -- neoclip
 require("neoclip").setup()
 keymap("n", "<leader>c", [[:Telescope neoclip ]], {})
