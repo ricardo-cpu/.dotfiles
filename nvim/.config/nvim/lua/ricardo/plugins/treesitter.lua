@@ -31,10 +31,7 @@ require("nvim-treesitter.configs").setup({
 	},
 	matchup = {
 		enable = true,
-	},
-	indent = {
-		enable = true,
-	},
+	}
 })
 
 local parsers = require("nvim-treesitter.parsers")
